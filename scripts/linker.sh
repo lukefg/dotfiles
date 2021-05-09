@@ -39,5 +39,6 @@ done
 unset DOTFILE
 unset DOTFILE_BASENAME
 unset MESSAGE_PREFIX
+unset RESPONSE
 
 return 0
