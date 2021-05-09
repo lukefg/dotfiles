@@ -1,0 +1,55 @@
+tap "homebrew/core"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/bundle"
+tap "heroku/brew"
+
+# ============
+# === MAIN ===
+# ============
+
+brew "git" # should already be installed
+brew "mas"
+
+cask "alfred"
+cask "appcleaner"
+cask "bettertouchtool"
+cask "disk-inventory-x"
+cask "dropbox"
+cask "firefox"
+cask "handbrake"
+cask "idrive"
+cask "scroll-reverser"
+cask "skyfonts"
+cask "spotify" 
+cask "vlc"
+cask "zoom"
+
+mas "Amphetamine", id: 937984704
+mas "Bear", id: 1091189122
+mas "Color Blind Pal", id: 1023111433
+mas "GIPHY CAPTURE", id: 668208984
+mas "Moom", id: 419330170
+mas "NordVPN IKE", id: 1116599239 # cask "nordvpn"
+mas "Trello", id: 1278508951
+mas "The Unarchiver", id: 425424353 # cask "the-unarchiver"
+
+# ===========
+# === DEV ===
+# ===========
+
+brew "awscli"
+brew "git"
+brew "git-lfs"
+brew "gradle"
+brew "heroku/brew/heroku"
+brew "nmap"
+brew "node"
+brew "python"
+brew "wget"
+
+cask "docker"
+cask "github"
+cask "postman"
+cask "visual-studio-code"
+cask "visual-studio"

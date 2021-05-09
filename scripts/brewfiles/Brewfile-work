@@ -1,0 +1,15 @@
+brew "cocoapods"
+
+cask "adobe-creative-cloud"
+cask "android-studio"
+cask "google-chrome"
+cask "dbvisualizer"
+cask "figma"
+cask "fork"
+cask "microsoft-office"
+cask "unity-hub"
+
+mas "Jira", id: 1475897096 # cask "jira-client"
+mas "Slack", id: 803453959 # cask "slack"
+
+# mas "Xcode", id: 497799835 # I need a specific version of Xcode

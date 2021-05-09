@@ -1,3 +1,0 @@
-brew "git"
-
-cask "handbrake"
