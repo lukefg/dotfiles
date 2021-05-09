@@ -59,6 +59,4 @@ cd ${REPO_DIR}
 source scripts/linker.sh
 source scripts/defaults.sh
 
-
-
 exit 0
