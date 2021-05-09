@@ -53,6 +53,9 @@ fi
 echo "Changing working directory to ${REPO_DIR}..."
 cd ${REPO_DIR}
 
+# Run shell scripts in scripts/
+# Reminder not to iterate over a find
+# I want these executed in a particular order
 source scripts/linker.sh
 source scripts/defaults.sh
 
