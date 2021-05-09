@@ -1,1 +1,7 @@
-export MYTESTVAR="its' here!"
+export DICTIONARY="/usr/share/dict/words"
+
+# export CLICOLOR=1 # same as ls -G
+# export LSCOLORS=ExFxBxDxCxehedabagacad
+# DISPLAY=
+export EDITOR=vim
+# PAGER=
