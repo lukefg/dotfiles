@@ -2,4 +2,4 @@
 
 echo "Symlinking config files to ${HOME}..."
 
-exit 0
+return 0

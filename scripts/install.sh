@@ -1,6 +1,7 @@
 #!/bin/sh
 
-CLONE_DIR="$HOME/Repos/git/"
+CLONE_DIR="$HOME/Repos/git"
+REPO_DIR="${CLONE_DIR}/dotfiles"
 
 echo "Bootstrapping new machine..."
 
@@ -43,25 +44,17 @@ cd ${CLONE_DIR}
 echo "Checking if repo already exists..."
 if [ -d "dotfiles" ]
 then
-	echo "Directory by name of dotfiles already exists here. Exiting..."
-	exit 1
+	echo "Directory by name of dotfiles already exists here. Skipped cloning."
 else
 	echo "No pre-existing version found. Cloning dotfiles repo..."
 	git clone "https://github.com/lukefg/dotfiles.git"
 fi
 
+echo "Changing working directory to ${REPO_DIR}..."
+cd ${REPO_DIR}
 
-
-
-
-
-
-
-
-
-
-
-
+source scripts/linker.sh
+source scripts/defaults.sh
 
 
 

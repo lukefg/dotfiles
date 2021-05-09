@@ -2,4 +2,4 @@
 
 echo "Modifying macOS preferences..."
 
-exit 0
+return 0
