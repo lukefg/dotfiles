@@ -1,15 +1,4 @@
 DOTFILES_BIN="${HOME}/Repos/git/dotfiles/bin"
-JAVA_HOME_1_7="/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home/bin"
-JAVA_HOME_1_8="/Library/Java/JavaVirtualMachines/jdk1.8.0_251.jdk/Contents/Home/bin"
-
-# Use a parameter to switch Java versions @TODO
-if [ "$1" == "1.8" ]
-then
-    PATH="${JAVA_HOME_1_8}:${PATH}"
-elif [ "$1" == "1.7" ]
-then
-    PATH="${JAVA_HOME_1_8}:${PATH}"
-fi
 
 # Ordered last to first
 PATH="/Users/luke/Library/Python/2.7/bin:${PATH}" # python
