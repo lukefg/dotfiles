@@ -59,4 +59,8 @@ cd ${REPO_DIR}
 source scripts/linker.sh
 source scripts/defaults.sh
 
+
+unset CLONE_DIR
+unset REPO_DIR
+
 exit 0
