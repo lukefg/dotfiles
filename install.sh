@@ -61,17 +61,11 @@ cd ${REPO_DIR}
 source scripts/linker.sh
 source scripts/brew.sh
 source scripts/defaults.sh
+source scripts/dock.sh
+source scripts/more.sh
 
 
-echo "Checking if Xcode Command Line Tools need installation..."
-xcode-select -p
-if [ $? -eq 0 ]
-then
-	echo "Xcode Command Line Tools directory detected. Skipping install."
-else
-	echo "No Xcode Command Line Tools directory detected. Installing..."
-	xcode-select --install
-fi
+
 
 unset CLONE_DIR
 unset REPO_DIR
