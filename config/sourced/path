@@ -1,0 +1,9 @@
+DOTFILES_BIN="${HOME}/Repos/git/dotfiles/bin"
+if [ -d ${DOTFILES_BIN} ]
+then
+	PATH="${DOTFILES_BIN}:${PATH}"
+	export PATH
+else
+	echo "Dotfiles bin cannot be found."
+fi
+
