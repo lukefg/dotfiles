@@ -59,6 +59,7 @@ cd ${REPO_DIR}
 
 # @TODO Needs to check that these exist
 source scripts/linker.sh
+source scripts/brew.sh
 source scripts/defaults.sh
 
 
