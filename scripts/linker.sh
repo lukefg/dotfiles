@@ -2,7 +2,7 @@
 
 echo "Symlinking configurations to ${HOME}..."
 
-for DOTFILE in $(find "./config/linked")
+for DOTFILE in $(find "$(pwd)/config/linked")
 do
 	if [ -f ${DOTFILE} ] # file exists
 	then
@@ -24,7 +24,7 @@ do
 				# -p inline prompt
 				case $RESPONSE in
 					[Yy]* ) break;;
-					* ) echo "Canceling. Retry later."; return 1;;
+					* ) echo "Canceling. Retry later."; unset RESPONSE; return 1;;
 				esac
 			done
 		fi

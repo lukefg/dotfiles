@@ -19,7 +19,7 @@ cask "dropbox"
 cask "firefox"
 cask "handbrake"
 cask "idrive"
-cask "scroll-reverser"
+# cask "scroll-reverser" # replaced by a BTT setting
 cask "skyfonts"
 cask "spotify" 
 cask "vlc"
