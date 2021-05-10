@@ -1,1 +1,1 @@
-alias l="ls -la"
+alias domains="defaults domains | tr ',' '\n' | grep -i"
