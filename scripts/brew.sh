@@ -24,12 +24,12 @@ do
 		echo "Success!"
 	else
 		echo "Something's missing from ${FILE}. Exiting. Retry later."
-		cd "${REPO_DIR}"
+		cd ../.. # To dotfiles root
 		return 1
 	fi
 done
 
-cd "${REPO_DIR}"
+cd ../.. # To dotfiles root
 
 unset BREWFILE_DIR
 unset MY_BREWFILES

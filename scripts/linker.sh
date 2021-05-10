@@ -2,7 +2,7 @@
 
 echo "Symlinking configurations to ${HOME}..."
 
-for DOTFILE in $(find "${REPO_DIR}/config/linked")
+for DOTFILE in $(find "./config/linked")
 do
 	if [ -f ${DOTFILE} ] # file exists
 	then

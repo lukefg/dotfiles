@@ -1,7 +1,6 @@
 #!/bin/sh
 
 CLONE_DIR="$HOME/Repos/git"
-REPO_DIR="${CLONE_DIR}/dotfiles"
 
 echo "Bootstrapping new machine..."
 
@@ -50,8 +49,8 @@ else
 	git clone "https://github.com/lukefg/dotfiles.git"
 fi
 
-echo "Changing working directory to ${REPO_DIR}..."
-cd ${REPO_DIR}
+echo "Changing working directory to ${CLONE_DIR}/dotfiles/..."
+cd dotfiles
 
 # Run shell scripts in scripts/
 # Reminder not to iterate over a find
@@ -66,8 +65,6 @@ source scripts/more.sh
 
 echo "All done!"
 
-
 unset CLONE_DIR
-unset REPO_DIR
 
 exit 0
