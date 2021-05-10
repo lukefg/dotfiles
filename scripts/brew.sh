@@ -30,5 +30,10 @@ do
 done
 
 cd "${REPO_DIR}"
+
+unset BREWFILE_DIR
+unset MY_BREWFILES
+unset FILE
+
 return 0
 

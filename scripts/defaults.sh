@@ -313,37 +313,6 @@ defaults write com.apple.screencapture show-thumbnail -bool false
 echo "Other > Screenshots > Disable shadow: Yes"
 defaults write com.apple.screencapture disable-shadow -bool true
 
-
-
-
-
-
-
-
-# ============================
-# === NON-DEFAULTS SECTION ===
-# ============================
-
-echo "Showing user Library..."
-chflags nohidden ~/Library
-
-# =========================
-# === SUPERUSER SECTION ===
-# =========================
-
-# echo "Requesting superuser privileges..."
-# sudo -v
-# echo "Keeping sudo alive until done..."
-# while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
-echo "Turning off startup chime..."
-sudo nvram StartupMute=%01
-
-
-
-
-
-
 echo "Killing all affected applications..."
 APPS=("Dock" "Finder")
 for APP in ${APPS}; # @TODO
@@ -354,5 +323,7 @@ done
 
 echo "Done. Note: Some changes require a logout/restart to take effect."
 
+unset APP
+unset APPS
 
 return 0

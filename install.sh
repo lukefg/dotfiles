@@ -64,7 +64,7 @@ source scripts/defaults.sh
 source scripts/dock.sh
 source scripts/more.sh
 
-
+echo "All done!"
 
 
 unset CLONE_DIR
