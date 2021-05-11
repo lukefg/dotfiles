@@ -177,14 +177,14 @@ defaults write com.apple.dock wvous-tr-corner -int 0
 echo "System Preferences > Hot Corners > Top-right: none"
 defaults write com.apple.dock wvous-tr-modifier -int 0
 
-echo "System Preferences > Hot Corners > Bottom-left: none"
-defaults write com.apple.dock wvous-bl-corner -int 0
+echo "System Preferences > Hot Corners > Bottom-left: Mission Control"
+defaults write com.apple.dock wvous-bl-corner -int 2
 
 echo "System Preferences > Hot Corners > Bottom-left: none"
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
-echo "System Preferences > Hot Corners > Bottom-right: none"
-defaults write com.apple.dock wvous-br-corner -int 0
+echo "System Preferences > Hot Corners > Bottom-right: Mission Control"
+defaults write com.apple.dock wvous-br-corner -int 2
 
 echo "System Preferences > Hot Corners > Bottom-right: none"
 defaults write com.apple.dock wvous-br-modifier -int 0
@@ -315,7 +315,7 @@ defaults write com.apple.screencapture disable-shadow -bool true
 
 echo "Killing all affected applications..."
 APPS=("Dock" "Finder")
-for APP in ${APPS}; # @TODO
+for APP in "Dock" "Finder" # @TODO
 do
     echo "Killing ${APP}..."
     killall "${APP}"

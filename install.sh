@@ -1,10 +1,9 @@
 #!/bin/bash
+# Bash is the default shell for Ubuntu, Raspbian, and macOS pre-Catalina. Still included in Catalina+
 
 CLONE_DIR="$HOME/Repos/git"
 
 echo "Bootstrapping new machine..."
-
-
 
 # Set up Homebrew
 echo "Checking for Homebrew installation..."
@@ -82,7 +81,7 @@ source scripts/more.sh
 source scripts/secrets.sh
 source scripts/login.sh
 
-echo "All done!"
+echo "All done! Some changes require restart/logout to take effect."
 
 unset CLONE_DIR
 
