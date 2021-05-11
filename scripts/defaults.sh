@@ -152,7 +152,7 @@ echo "System Preferences > Dock & Menu Bar > Show hidden apps with translucent i
 defaults write com.apple.dock showhidden -bool true
 
 echo "System Preferences > Dock & Menu Bar > Only active apps in Dock: No"
-defaults write com.apple.dock static-only -bool false
+defaults write com.apple.dock static-only -bool true
 
 echo "System Preferences > Mission Control > Automatically rearrange Spaces based on most recent use: No"
 defaults write com.apple.dock mru-spaces -bool false

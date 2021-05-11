@@ -76,7 +76,7 @@ softwareupdate --all --install
 source scripts/linker.sh
 source scripts/brew.sh
 source scripts/defaults.sh
-source scripts/dock.sh
+# source scripts/dock.sh # Changed to active-apps only
 source scripts/more.sh
 
 source scripts/secrets.sh
