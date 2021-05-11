@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "Executing some additional steps..."
 

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 BREWFILE_DIR="scripts/brewfiles"
 MY_BREWFILES="Brewfile Brewfile-mine-gaming Brewfile-mine-music Brewfile-work"

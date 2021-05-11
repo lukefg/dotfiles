@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 CLONE_DIR="$HOME/Repos/git"
 
