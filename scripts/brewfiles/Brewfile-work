@@ -11,5 +11,4 @@ cask "unity-hub"
 
 mas "Jira", id: 1475897096 # cask "jira-client"
 mas "Slack", id: 803453959 # cask "slack"
-
-# mas "Xcode", id: 497799835 # I need a specific version of Xcode
+mas "Xcode", id: 497799835 # @TODO I need a specific version of Xcode

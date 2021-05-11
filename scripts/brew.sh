@@ -29,6 +29,10 @@ do
 	fi
 done
 
+echo "Cleaning up..."
+brew cleanup
+echo "Done"
+
 cd ../.. # To dotfiles root
 
 unset BREWFILE_DIR

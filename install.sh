@@ -4,6 +4,8 @@ CLONE_DIR="$HOME/Repos/git"
 
 echo "Bootstrapping new machine..."
 
+
+
 # Set up Homebrew
 echo "Checking for Homebrew installation..."
 brew --version
@@ -24,6 +26,16 @@ then
 else
 	echo "Git installation not detected. Installing..."
 	brew install git
+fi
+
+# Set up Xcode CLT
+echo "Checking if Xcode Command Line Tools need installation..."
+if [ -d $(xcode-select -p) ]
+then
+	echo "Xcode Command Line Tools directory detected. Skipping install."
+else
+	echo "No Xcode Command Line Tools directory detected. Installing..."
+	xcode-select --install
 fi
 
 # Prepare to clone the dotfiles repo
@@ -51,6 +63,10 @@ fi
 
 echo "Changing working directory to ${CLONE_DIR}/dotfiles/..."
 cd dotfiles
+
+# Software update
+echo "Running Software Update..."
+softwareupdate --all --install
 
 # Run shell scripts in scripts/
 # Reminder not to iterate over a find
