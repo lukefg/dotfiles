@@ -39,6 +39,7 @@ mas "The Unarchiver", id: 425424353 # cask "the-unarchiver"
 # ===========
 
 brew "awscli"
+brew "coreutils"
 brew "git"
 brew "git-lfs"
 brew "gradle"
@@ -48,6 +49,9 @@ brew "node"
 brew "python"
 brew "wget"
 
+brew "pure" # zsh prompt
+
+cask "dotnet"
 cask "docker"
 cask "github"
 cask "postman"

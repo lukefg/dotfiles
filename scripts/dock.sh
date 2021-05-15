@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Unused - Switched to active apps only
+
 echo "Re-ordering the Dock..."
 
 defaults write com.apple.dock persistent-apps -array

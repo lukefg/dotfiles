@@ -1,3 +1,5 @@
 cask "8bitdo-ultimate-software"
 cask "epic-games"
 cask "steam"
+cask "battle-net"
+cask "openemu"

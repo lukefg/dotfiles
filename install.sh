@@ -67,22 +67,23 @@ cd dotfiles
 echo "Running Software Update..."
 softwareupdate --all --install
 
-# Run shell scripts in scripts/
-# Reminder not to iterate over a find
-# I want these executed in a particular order
-
-# @TODO Needs to check that these exist
-source scripts/linker.sh
-source scripts/brew.sh
-source scripts/defaults.sh
-# source scripts/dock.sh # Changed to active-apps only
-source scripts/more.sh
-
-source scripts/secrets.sh
-source scripts/login.sh
+# Run shell scripts in scripts/ in a specific order
+for ARG in brew linker defaults more secrets login work
+do
+	SCRIPT="scripts/${ARG}.sh"
+	if [ -f "${SCRIPT}" ]
+	then
+		echo "Executing ${SCRIPT}..."
+		source "${SCRIPT}"
+	else
+		echo "Could not find ${SCRIPT}. Skipping. Try again later."
+	fi
+done
 
 echo "All done! Some changes require restart/logout to take effect."
 
 unset CLONE_DIR
+unset ARG
+unset SCRIPT
 
 exit 0
