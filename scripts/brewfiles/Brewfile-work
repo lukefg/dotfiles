@@ -7,8 +7,8 @@ cask "dbvisualizer"
 cask "figma"
 cask "fork"
 cask "microsoft-office"
+cask "slack" # mas "Slack", id: 803453959
 cask "unity-hub"
 
-mas "Jira", id: 1475897096 # cask "jira-client"
-mas "Slack", id: 803453959 # cask "slack"
+mas "Jira", id: 1475897096
 mas "Xcode", id: 497799835 # @TODO I need a specific version of Xcode

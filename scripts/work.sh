@@ -20,7 +20,7 @@ else
     if [ -f "${CLOSET_PATH}/${CONFIG_NAME}" ]
     then
         echo "Found. Copying to hidden folder..."
-        cp "${CLOSET_PATH}" "${HIDDEN_DIR}"
+        cp "${CLOSET_PATH}/${CONFIG_NAME}" "${HIDDEN_DIR}"
     else
         echo "Not found. Place the config in Dropbox."
     fi
