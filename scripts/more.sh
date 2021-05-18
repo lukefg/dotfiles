@@ -20,15 +20,20 @@ echo "Revealing user Library folder..."
 chflags nohidden ~/Library
 
 # PYTHON
-echo "Downloading pip as Python package manager..."
+echo "Checking for pip installation..."
 python3 -m pip --version
 if [ $? -eq 0 ]
 then
+	echo "Found."
+else
+	echo "Not found. Downloading pip as Python package manager..."
 	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 	python3 get-pip.py
+	rm get-pip.py
 	python3 -m pip install --upgrade pip
 	python3 -mpip install requests
 	python3 -mpip install boto3
+
 fi
 
 # =========================
@@ -42,7 +47,5 @@ fi
 
 echo "Turning off startup chime..."
 sudo nvram StartupMute=%01
-
-rm get-pip.py
 
 return 0
