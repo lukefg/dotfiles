@@ -1,1 +1,2 @@
 alias domains="defaults domains | tr ',' '\n' | grep -i"
+alias brewdeps="brew leaves | xargs brew deps --include-build --tree"

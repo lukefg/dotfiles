@@ -18,7 +18,6 @@
 # /etc/paths has the basic starting locations
 # /etc/paths.d contains files like `dotnet` and `mono-commands`
 
-
 # .profile is not sourced in a new terminal window
 
 # `sh` command re-executes as bash or zsh depending on /private/var/select/sh, which is a link to /bin/bash
@@ -26,15 +25,16 @@
 # or rather it's supposed to, but that's not happening for the home one
 
 # Okay, the problem is that path_helper is behaving as expected for Terminal.app BUT NOT FOR ITERM!!!
+# Opened both Terminal and iTerm the next morning after a shut down and... both act the same now. -_-
+# I had tried a computer restart last night to no avail.
 
 DOTFILES_BIN="${HOME}/Repos/git/dotfiles/bin"
 
 if [ -d ${DOTFILES_BIN} ]
 then
 	PATH="${DOTFILES_BIN}:${PATH}"
-	echo "found"
 else
-	echo "Dotfiles bin cannot be found."
+	echo "Dotfiles bin cannot be found. Can't add to PATH."
 fi
 
 export PATH
