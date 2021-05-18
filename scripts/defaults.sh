@@ -41,8 +41,8 @@ defaults write -globalDomain NSQuitAlwaysKeepsWindows -bool false
 echo "System Preferences > Dock & Menu Bar > Tile size: ~55%"
 defaults write com.apple.dock tilesize -int 75
 
-echo "System Preferences > Dock & Menu Bar > Magnify: Yes"
-defaults write com.apple.dock magnification -bool true
+echo "System Preferences > Dock & Menu Bar > Magnify: No"
+defaults write com.apple.dock magnification -bool false
 
 echo "System Preferences > Dock & Menu Bar > Magnification size: ~70%"
 defaults write com.apple.dock largesize -int 96
@@ -151,37 +151,39 @@ defaults write com.apple.dock autohide-delay -float 0
 echo "System Preferences > Dock & Menu Bar > Show hidden apps with translucent icon: Yes"
 defaults write com.apple.dock showhidden -bool true
 
-echo "System Preferences > Dock & Menu Bar > Only active apps in Dock: No"
+echo "System Preferences > Dock & Menu Bar > Only active apps in Dock: Yes"
 defaults write com.apple.dock static-only -bool true
 
 echo "System Preferences > Mission Control > Automatically rearrange Spaces based on most recent use: No"
 defaults write com.apple.dock mru-spaces -bool false
 
+
 echo "System Preferences > Mission Control > Group windows by application: Yes"
 defaults write com.apple.dock expose-group-by-app -bool true
+
 
 echo "System Preferences > Hot Corners > Top-left: none"
 defaults write com.apple.dock wvous-tl-corner -int 0
 
-echo "System Preferences > Hot Corners > Top-left: none"
+echo "System Preferences > Hot Corners > Top-left modifier: none"
 defaults write com.apple.dock wvous-tl-modifier -int 0
 
 echo "System Preferences > Hot Corners > Top-right: none"
 defaults write com.apple.dock wvous-tr-corner -int 0
 
-echo "System Preferences > Hot Corners > Top-right: none"
+echo "System Preferences > Hot Corners > Top-right modifier: none"
 defaults write com.apple.dock wvous-tr-modifier -int 0
 
 echo "System Preferences > Hot Corners > Bottom-left: Mission Control"
 defaults write com.apple.dock wvous-bl-corner -int 2
 
-echo "System Preferences > Hot Corners > Bottom-left: none"
+echo "System Preferences > Hot Corners > Bottom-left modifier: none"
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
 echo "System Preferences > Hot Corners > Bottom-right: Mission Control"
 defaults write com.apple.dock wvous-br-corner -int 2
 
-echo "System Preferences > Hot Corners > Bottom-right: none"
+echo "System Preferences > Hot Corners > Bottom-right modifier: none"
 defaults write com.apple.dock wvous-br-modifier -int 0
 
 echo "System Preferences > Siri > Enable Ask Siri: No"
@@ -207,7 +209,7 @@ defaults write -globalDomain AppleTemperatureUnit -string Fahrenheit
 
 
 echo "System Preferences > Sound > Play feedback when volume is changed: No"
-defaults write  com.apple.sound.beep.feedback -bool false
+defaults write -globalDomain com.apple.sound.beep.feedback -int 0
 
 echo "System Preferences > Keyboard > Correct spelling automatically: No"
 defaults write -globalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -246,9 +248,6 @@ defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 echo "Finder > General > New windows show: home"
 defaults write com.apple.finder NewWindowTarget -string PfHm
 
-echo "Finder > General > New windows show: home"
-defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
-
 echo "Finder > General > Open folders in tabs instead of windows: No"
 defaults write com.apple.finder FinderSpawnTab -bool false
 
@@ -274,6 +273,8 @@ defaults write com.apple.finder FXDefaultSearchScope -string SCcf
 echo "Finder > View Options > Show path bar: Yes"
 defaults write com.apple.finder ShowPathbar -bool true
 
+echo "Finder > View Options > Show tab bar: Yes"
+defaults write com.apple.finder ShowTabView -bool true
 
 echo "Finder > View Options > Show status bar: Yes"
 defaults write com.apple.finder ShowStatusBar -bool true
@@ -299,20 +300,20 @@ defaults write -globalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 echo "Finder > Other > Save to iCloud by default: No"
 defaults write -globalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-echo "Other > Screenshots > Set screenshot location"
+echo "Apps > Screenshots > Set screenshot location"
 defaults write com.apple.screencapture location -string "${HOME}/Desktop/Screenshots"
 
-echo "Other > Screenshots > Display thumbnail: No"
+echo "Apps > Screenshots > Display thumbnail: No"
 defaults write com.apple.screencapture show-thumbnail -bool false
 
-echo "Other > Screenshots > Disable shadow: Yes"
+echo "Apps > Screenshots > Disable shadow: Yes"
 defaults write com.apple.screencapture disable-shadow -bool true
 
 echo "Apps > Bear > Theme: Dracula"
 defaults write net.shinyfrog.bear SFAppDarkThemeName -string Dracula
 
 echo "Apps > Bear > App icon matches theme: Yes"
-defaults write com.shinyfrog.bear SFAppIconMatchesTheme -bool true
+defaults write net.shinyfrog.bear SFAppIconMatchesTheme -bool true
 
 echo "Apps > Bear > Auto spell correction: No"
 defaults write net.shinyfrog.bear SFNoteTextViewAutomaticSpellingCorrectionEnabled -bool false
@@ -323,8 +324,27 @@ defaults write net.shinyfrog.bear SFNoteTextViewContinuousSpellCheckingEnabled -
 echo "Apps > Bear > Grammar check: No"
 defaults write net.shinyfrog.bear SFNoteTextViewGrammarCheckingEnabled -bool false
 
+echo "Apps > Amphetamine > Change to carafe appearance"
+defaults write com.if.Amphetamine "Icon Style" -int 4
+
+echo "Apps > Amphetamine > Low opacity when inactive"
+defaults write com.if.Amphetamine "Lower Icon Opacity" -int 1
+
+echo "Apps > Amphetamine > Left click to start session"
+defaults write com.if.Amphetamine "Status Item Click" -int 2
+
+echo "Apps > iTerm2 > Set settings sync folder"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "${HOME}/Dropbox/Sync/Apps/iTerm2/Settings"
+
+echo "Apps > iTerm2 > Load prefs from custom folder: Yes"
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+
+echo "Apps > ImageCapture > Disable auto-prompt to get pictures from device: Yes"
+defaults write com.apple.ImageCapture disableHotPlug -bool true
+
+
 echo "Killing all affected applications..."
-for APP in Dock Finder Bear # @TODO
+for APP in Dock Finder Bear Amphetamine iTerm2
 do
     echo "Killing ${APP}..."
     killall "${APP}"

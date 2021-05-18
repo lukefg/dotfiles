@@ -9,7 +9,13 @@ CYAN=$(tput setaf 6)
 
 CLONE_DIR="$HOME/Repos/git"
 
-echo "$Bootstrapping new machine..."
+if [ "${TERM_PROGRAM}" = "iTerm.app" ]
+then
+	echo "${RED}Please use a terminal other than iTerm. This process makes changes to it.${RESET}"
+	exit 1
+fi
+
+echo "Bootstrapping new machine..."
 
 while true
 do
