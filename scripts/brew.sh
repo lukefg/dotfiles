@@ -13,19 +13,14 @@ echo "Changing working directory to ${BREWFILE_DIR}..."
 cd ${BREWFILE_DIR}
 for FILE in ${MY_BREWFILES}
 do
-	echo "Now starting: ${FILE}..."
-	brew bundle --file="${FILE}"
-	# Automatically installs the bundle "tap" on first run
-
-	echo "Checking if everything was installed..."
+	echo "Checking if everything in ${FILE} is installed already..."
 	brew bundle check --file="${FILE}"
 	if [ $? -eq 0 ]
 	then
 		echo "Success!"
 	else
-		echo "Something's missing from ${FILE}. Exiting. Retry later."
-		cd ../.. # To dotfiles root
-		return 1
+		echo "Something's missing from ${FILE}. Brewing..."
+		brew bundle --file="${FILE}"
 	fi
 done
 

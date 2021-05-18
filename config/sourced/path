@@ -1,31 +1,40 @@
-DOTFILES_BIN="${HOME}/Repos/git/dotfiles/bin"
+# Some notes on PATH:
+# Order of operations
+# .zshenv → .zprofile → .zshrc → .zlogin → .zlogout
+# First the /etc system-wide one, then the home directory one
+# profile and login are the same, just different times and to reflect behavior of other shells
 
-# Ordered last to first
-PATH="/Users/luke/Library/Python/2.7/bin:${PATH}" # python
-PATH="/Users/luke/Library/Android/sdk/platform-tools:${PATH}" # android platform tools
-PATH="/Users/luke/Dropbox/Sync/bin:${PATH}" # dropbox
+# /etc /tmp and /var are all symlinks into /private/*
+# In addition to hosts and shells, /private/etc/ contains files like:
+# profile, bashrc, bashrc_${TERM_PROGRAM}, zshrc, zshrc_${TERM_PROGRAM}, and zprofile
+# These are system-wide profiles!
+
+# Note that zsh does not read /etc/profile or ~/.profile because it's not fully compatible with other shells' syntax
+# It reads /etc/zprofile and ~/.zprofile instead
+
+# Both /etc/profile and /etc/zprofile execute /usr/libexec/path_helper
+# which reads the contents of file /etc/paths and of the files in /etc/paths.d
+# and appends them to the PATH.
+# /etc/paths has the basic starting locations
+# /etc/paths.d contains files like `dotnet` and `mono-commands`
+
+
+# .profile is not sourced in a new terminal window
+
+# `sh` command re-executes as bash or zsh depending on /private/var/select/sh, which is a link to /bin/bash
+# it loads /etc/profile and ~/.profile
+# or rather it's supposed to, but that's not happening for the home one
+
+# Okay, the problem is that path_helper is behaving as expected for Terminal.app BUT NOT FOR ITERM!!!
+
+DOTFILES_BIN="${HOME}/Repos/git/dotfiles/bin"
 
 if [ -d ${DOTFILES_BIN} ]
 then
 	PATH="${DOTFILES_BIN}:${PATH}"
-	export PATH
+	echo "found"
 else
 	echo "Dotfiles bin cannot be found."
 fi
 
 export PATH
-
-# Order should be
-# Dropbox
-# Android Studio
-# Python
-# Java if special version
-# User local bin
-# User bin
-# Bin
-# User sbin
-# Sbin
-# User local share dotnet
-# ~/.dotnet/tools
-# /Library/Apple/usr/bin
-# /Library/Frameworks/Mono.framework/Versions/Current/Commands

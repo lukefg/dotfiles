@@ -11,12 +11,12 @@ else
     while true
     do
         echo "Log in to Dropbox and retrieve the Sync/ folder, then type 'Continue'."
-        echo "Opening Dropbox.app..."
+        echo "Opening Dropbox.app now..."
         open -a "Dropbox"
         read -p "Continue/Skip? " RESPONSE
         case $RESPONSE in
             [Cc]* ) break;;
-            * ) echo "Skipping. Retry later."; return 1;;
+            * ) echo "Skipping. Retry later."; return 1;; # @TODO I think this is busted
         esac
         if [ -d "${DROPBOX_SYNC}" ]
         then
@@ -52,7 +52,22 @@ then
 else
     echo "License not found. Make sure ${BTT_LICENSE_SOURCE} exists and try again later."
 fi
+echo "Relaunching BetterTouchTool..."
 open -a "BetterTouchTool"
+
+echo "Setting up Moom..."
+echo "Telling Moom to quit..."
+killall "Moom"
+MOOM_PREFS="${DROPBOX_SYNC}/Apps/Moom/copied.plist"
+if [ -f "${MOOM_PREFS}" ]
+then
+    echo "Moom plist found in Dropbox. Importing to defaults..."
+    defaults import com.manytricks.Moom "${MOOM_PREFS}"
+else
+    echo "Moom settings could not be found. From source Mac, export them to ${MOOM_PREFS} and try again later."
+fi
+echo "Relaunching Moom..."
+open -a "Moom"
 
 unset DROPBOX_SYNC
 unset ALFRED_SYNC_FOLDER

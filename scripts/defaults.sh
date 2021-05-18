@@ -157,13 +157,8 @@ defaults write com.apple.dock static-only -bool true
 echo "System Preferences > Mission Control > Automatically rearrange Spaces based on most recent use: No"
 defaults write com.apple.dock mru-spaces -bool false
 
-
 echo "System Preferences > Mission Control > Group windows by application: Yes"
 defaults write com.apple.dock expose-group-by-app -bool true
-
-
-
-
 
 echo "System Preferences > Hot Corners > Top-left: none"
 defaults write com.apple.dock wvous-tl-corner -int 0
@@ -305,7 +300,7 @@ echo "Finder > Other > Save to iCloud by default: No"
 defaults write -globalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 echo "Other > Screenshots > Set screenshot location"
-defaults write com.apple.screencapture location -string "$\{HOME\}/Desktop/Screenshots"
+defaults write com.apple.screencapture location -string "${HOME}/Desktop/Screenshots"
 
 echo "Other > Screenshots > Display thumbnail: No"
 defaults write com.apple.screencapture show-thumbnail -bool false
@@ -313,9 +308,23 @@ defaults write com.apple.screencapture show-thumbnail -bool false
 echo "Other > Screenshots > Disable shadow: Yes"
 defaults write com.apple.screencapture disable-shadow -bool true
 
+echo "Apps > Bear > Theme: Dracula"
+defaults write net.shinyfrog.bear SFAppDarkThemeName -string Dracula
+
+echo "Apps > Bear > App icon matches theme: Yes"
+defaults write com.shinyfrog.bear SFAppIconMatchesTheme -bool true
+
+echo "Apps > Bear > Auto spell correction: No"
+defaults write net.shinyfrog.bear SFNoteTextViewAutomaticSpellingCorrectionEnabled -bool false
+
+echo "Apps > Bear > Spell check: No"
+defaults write net.shinyfrog.bear SFNoteTextViewContinuousSpellCheckingEnabled -bool false
+
+echo "Apps > Bear > Grammar check: No"
+defaults write net.shinyfrog.bear SFNoteTextViewGrammarCheckingEnabled -bool false
+
 echo "Killing all affected applications..."
-APPS=("Dock" "Finder")
-for APP in "Dock" "Finder" # @TODO
+for APP in Dock Finder Bear # @TODO
 do
     echo "Killing ${APP}..."
     killall "${APP}"

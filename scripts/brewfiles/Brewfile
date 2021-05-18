@@ -1,5 +1,7 @@
 tap "homebrew/core"
 tap "homebrew/cask"
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/bundle"
 tap "heroku/brew"
@@ -17,22 +19,32 @@ cask "bettertouchtool"
 cask "disk-inventory-x"
 cask "dropbox"
 cask "firefox"
+cask "focusrite-control"
 cask "handbrake"
 cask "idrive"
+cask "logitech-g-hub"
 # cask "scroll-reverser" # replaced by a BTT setting
 cask "skyfonts"
-cask "spotify" 
+cask "spotify"
+cask "steelseries-engine"
 cask "vlc"
 cask "zoom"
 
 mas "Amphetamine", id: 937984704
 mas "Bear", id: 1091189122
-mas "Color Blind Pal", id: 1023111433
 mas "GIPHY CAPTURE", id: 668208984
 mas "Moom", id: 419330170
 mas "NordVPN IKE", id: 1116599239 # cask "nordvpn"
 mas "Trello", id: 1278508951
 mas "The Unarchiver", id: 425424353 # cask "the-unarchiver"
+
+# =============
+# === FONTS ===
+# =============
+
+cask "font-source-code-pro"
+cask "font-sf-pro"
+cask "font-new-york"
 
 # ===========
 # === DEV ===
@@ -54,6 +66,7 @@ brew "pure" # zsh prompt
 cask "dotnet"
 cask "docker"
 cask "github"
+cask "iterm2"
 cask "postman"
 cask "visual-studio-code"
 cask "visual-studio"

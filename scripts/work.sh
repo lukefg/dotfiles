@@ -1,7 +1,10 @@
 #!/bin/bash
 
-echo "Checking for hidden folder..."
+CONFIG_NAME="sheets_client_secret.json"
 HIDDEN_DIR="${HOME}/.pixelberry"
+CLOSET_PATH="${HOME}/Dropbox/Sync/Pixelberry"
+
+echo "Checking for hidden folder..."
 if [ -d "${HIDDEN_DIR}" ]
 then
     echo "Found."
@@ -11,11 +14,9 @@ else
 fi
 
 echo "Looking for closet config..."
-CONFIG_NAME="sheets_client_secret.json"
-CLOSET_PATH="${HOME}/Dropbox/Sync/Pixelberry"
 if [ -f "${HIDDEN_DIR}/${CONFIG_NAME}" ]
 then
-    echo "Already exists in hidden folder."
+    echo "Already exists in hidden folder." # @TODO Order on this is odd. First check if its in the right spot.
 else
     if [ -f "${CLOSET_PATH}/${CONFIG_NAME}" ]
     then
