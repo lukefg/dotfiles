@@ -7,29 +7,27 @@ CLOSET_PATH="${HOME}/Dropbox/Sync/Pixelberry"
 echo "Checking for hidden folder..."
 if [ -d "${HIDDEN_DIR}" ]
 then
-    echo "Found."
+    echo "${GREEN}Found.${RESET}"
 else
-    echo "Not found. Creating..."
+    echo "${RED}Not found. Creating...${RESET}"
     mkdir "${HIDDEN_DIR}"
 fi
 
 echo "Looking for closet config..."
 if [ -f "${HIDDEN_DIR}/${CONFIG_NAME}" ]
 then
-    echo "Already exists in hidden folder." # @TODO Order on this is odd. First check if its in the right spot.
+    echo "${GREEN}Already exists in hidden folder.${RESET}"
 else
     if [ -f "${CLOSET_PATH}/${CONFIG_NAME}" ]
     then
-        echo "Found. Copying to hidden folder..."
+        echo "${YELLOW}Found. Copying to hidden folder...${RESET}"
         cp "${CLOSET_PATH}/${CONFIG_NAME}" "${HIDDEN_DIR}"
     else
-        echo "Not found. Place the config in Dropbox."
+        echo "${RED}Not found. Place the config in Dropbox and try again later.${RESET}"
     fi
 fi
 
-unset HIDDEN_DIR
-unset CONFIG_NAME
-unset CLOSET_PATH
+unset HIDDEN_DIR CONFIG_NAME CLOSET_PATH
 
 # echo "Looking for Choices repos..." @TODO
 # login, svn the repos, then symlink them to Desktop

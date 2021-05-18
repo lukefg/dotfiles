@@ -31,8 +31,6 @@ echo "Reloading Dock..."
 killall Dock
 echo "Done"
 
-unset APP
-unset APP_LOCATION
-unset ENTRY
+unset APP APP_LOCATION ENTRY
 
 return 0

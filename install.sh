@@ -1,44 +1,50 @@
 #!/bin/bash
 # Bash is the default shell for Ubuntu, Raspbian, and macOS pre-Catalina. Still included in Catalina+
 
+RESET=$(tput sgr0)
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+CYAN=$(tput setaf 6)
+
 CLONE_DIR="$HOME/Repos/git"
 
-echo "Bootstrapping new machine..."
+echo "$Bootstrapping new machine..."
 
 while true
 do
-	read -p "Is this a [p]ersonal or [w]ork machine? " RESPONSE
+	read -p "${CYAN}Is this a [p]ersonal or [w]ork machine? ${RESET}" RESPONSE
 	case $RESPONSE in
 		[Pp]* ) echo "This is a personal machine."; break;;
 		[Ww]* ) echo "This is a work machine."; INSTALL_WORK=0; break;;
-		* ) echo "Need a response starting with P or W. Try again.";;
+		* ) echo "${RED}Need a response starting with P or W. Try again.${RESET}";;
 	esac
 done
 
 if [ ${INSTALL_WORK} ]
 then
-	read -p "Install Choices package? [yN] " RESPONSE
+	read -p "${CYAN}Install Choices package? [yN] ${RESET}" RESPONSE
 	case $RESPONSE in
 		[Yy]* ) echo "Will install Choices requirements."; INSTALL_CHOICES=0;;
 		* ) echo "Will not install Choices requirements.";
 	esac
-	read -p "Install 3D package? [yN] " RESPONSE
+	read -p "${CYAN}Install 3D package? [yN] ${RESET}" RESPONSE
 	case $RESPONSE in
 		[Yy]* ) echo "Will install 3D requirements."; INSTALL_3D=0;;
 		* ) echo "Will not install 3D requirements.";
 	esac
-	read -p "Install 1001 package? [yN] " RESPONSE
+	read -p "${CYAN}Install 1001 package? [yN] ${RESET}" RESPONSE
 	case $RESPONSE in
 		[Yy]* ) echo "Will install 1001 requirements."; INSTALL_1001=0;;
 		* ) echo "Will not install 1001 requirements.";
 	esac
 else
-	read -p "Install gaming package? [yN] " RESPONSE
+	read -p "${CYAN}Install gaming package? [yN] ${RESET}" RESPONSE
 	case $RESPONSE in
 		[Yy]* ) echo "Will install gaming requirements."; INSTALL_GAMING=0;;
 		* ) echo "Will not install gaming requirements.";
 	esac
-	read -p "Install music production package? [yN] " RESPONSE
+	read -p "${CYAN}Install music production package? [yN] ${RESET}" RESPONSE
 	case $RESPONSE in
 		[Yy]* ) echo "Will install music production requirements."; INSTALL_MUSIC=0;;
 		* ) echo "Will not install music production requirements.";
@@ -54,9 +60,9 @@ echo "Checking for Homebrew installation..."
 brew --version
 if [ $? -eq 0 ]
 then
-	echo "Homebrew installation detected."
+	echo "${GREEN}Homebrew installation detected.${RESET}"
 else
-	echo "Homebrew installation not detected. Installing..."
+	echo "${YELLOW}Homebrew installation not detected. Installing...${RESET}"
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
@@ -65,18 +71,18 @@ echo "Checking for git installation..."
 git --version
 if [ $? -eq 0 ]
 then
-	echo "Git installation detected."
+	echo "${GREEN}Git installation detected.${RESET}"
 else
-	echo "Git installation not detected. Installing..."
+	echo "${YELLOW}Git installation not detected. Installing...${RESET}"
 	brew install git
 fi
 
 # Prepare to clone the dotfiles repo
 if [ -d "${CLONE_DIR}" ]
 then
-	echo "Intended parent directory for repo ${CLONE_DIR} exists."
+	echo "${GREEN}Intended parent directory for repo ${CLONE_DIR} exists.${RESET}"
 else
-	echo "Making directories at ${CLONE_DIR} as repo parent..."
+	echo "${YELLOW}Making directories at ${CLONE_DIR} as repo parent...${RESET}"
 	mkdir -p "${CLONE_DIR}"
 	# -p creates intermediary directories as necessary
 	# Doesn't throw a "File exists"
@@ -88,9 +94,9 @@ cd ${CLONE_DIR}
 echo "Checking if repo already exists..."
 if [ -d "dotfiles" ]
 then
-	echo "Directory by name of dotfiles already exists here. Skipped cloning."
+	echo "${GREEN}Directory by name of dotfiles already exists here. Skipped cloning.${RESET}"
 else
-	echo "No pre-existing version found. Cloning dotfiles repo..."
+	echo "${YELLOW}No pre-existing version found. Cloning dotfiles repo...${RESET}"
 	git clone "https://github.com/lukefg/dotfiles.git"
 fi
 
@@ -103,17 +109,17 @@ do
 	SCRIPT="scripts/${ARG}.sh"
 	if [ -f "${SCRIPT}" ]
 	then
-		echo "Executing ${SCRIPT}..."
+		echo "${YELLOW}Executing ${SCRIPT}...${RESET}"
 		source "${SCRIPT}"
 	else
-		echo "Could not find ${SCRIPT}. Skipping. Try again later."
+		echo "${RED}WARNING: Could not find ${SCRIPT}. Skipping. Try again later.${RESET}"
 	fi
 done
 
 echo "All done! Some changes require restart/logout to take effect."
 
-unset CLONE_DIR
-unset ARG
-unset SCRIPT
+unset CLONE_DIR ARG SCRIPT
+unset INSTALL_GAMING INSTALL_MUSIC INSTALL_WORK INSTALL_CHOICES INSTALL_3D INSTALL_1001
+unset RESET RED GREEN YELLOW CYAN
 
 exit 0

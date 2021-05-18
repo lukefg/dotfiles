@@ -332,7 +332,6 @@ done
 
 echo "Done. Note: Some changes require a logout/restart to take effect."
 
-unset APP
-unset APPS
+unset APP APPS
 
 return 0

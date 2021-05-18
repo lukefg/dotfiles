@@ -4,13 +4,13 @@ function check_brewfile() {
 
 	if [ -z $1 ]
 	then
-		echo "ERROR: check_brewfile() needs an argument."
+		echo "${RED}ERROR: check_brewfile() needs an argument.${RESET}"
 		return 1
 	fi
 
 	if [ ! -r $1 ]
 	then
-		echo "ERROR: $1 is not readable."
+		echo "${RED}ERROR: $1 is not readable.${RESET}"
 		return 2
 	fi
 
@@ -18,9 +18,9 @@ function check_brewfile() {
 	brew bundle check --file="$1"
 	if [ $? -eq 0 ]
 	then
-		echo "Success!"
+		echo "${GREEN}Success!${RESET}"
 	else
-		echo "Something's missing from $1. Brewing..."
+		echo "${YELLOW}Something's missing from $1. Brewing...${RESET}"
 		brew bundle --file="$1"
 	fi
 }
@@ -51,9 +51,7 @@ echo "Done"
 
 cd ../.. # To dotfiles root
 
-unset BREWFILE_DIR
-unset MY_BREWFILES
-unset FILE
+unset BREWFILE_DIR MY_BREWFILES FILE
 
 return 0
 

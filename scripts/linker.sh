@@ -15,21 +15,18 @@ do
 			else
 				MESSAGE_PREFIX="${DOTFILE_BASENAME} is already a file in HOME."
 			fi
-			read -p "${MESSAGE_PREFIX} Are you sure? [yN] " RESPONSE # -p inline prompt
+			read -p "${CYAN}${MESSAGE_PREFIX} Are you sure? [yN] ${RESET}" RESPONSE # -p inline prompt
 			case $RESPONSE in
 				[Yy]* ) ;;
 				* ) echo "Canceling. Retry later."; unset RESPONSE; return 1;;
 			esac
 		fi
 
-		echo "Linking $(basename "${DOTFILE}") to home..."
+		echo "${YELLOW}Linking $(basename "${DOTFILE}") to home...${RESET}"
 		ln -fs "${DOTFILE}" "${HOME}" # -s: symbolic; -f: if it already exists, replace it
 	fi
 done
 
-unset DOTFILE
-unset DOTFILE_BASENAME
-unset MESSAGE_PREFIX
-unset RESPONSE
+unset DOTFILE DOTFILE_BASENAME MESSAGE_PREFIX RESPONSE
 
 return 0
