@@ -5,6 +5,11 @@ echo "Modifying macOS preferences..."
 echo "Closing System Preferences..."
 osascript -e 'tell application "System Preferences" to quit'
 
+echo "Making sure that the affected applications have been opened at least once and their prefs exist..."
+open -a Amphetamine
+open -a Bear
+open -a iTerm2
+
 echo "System Preferences > General > Appearance: Dark"
 defaults write -globalDomain AppleInterfaceStyle -string Dark
 
@@ -74,11 +79,11 @@ defaults write com.apple.dock show-recents -bool false
 echo "System Preferences > Dock & Menu Bar > Auto hide menu bar: Yes"
 defaults write -globalDomain _HIHideMenuBar -bool true
 
-echo "System Preferences > Dock & Menu Bar > Show in menu bar - Wi-Fi: No"
-defaults write com.apple.controlcenter "NSStatusItem Visible WiFi" -bool false
+echo "System Preferences > Dock & Menu Bar > Show in menu bar - Wi-Fi: Yes"
+defaults write com.apple.controlcenter "NSStatusItem Visible WiFi" -bool true
 
-echo "System Preferences > Dock & Menu Bar > Show in menu bar - Bluetooth: No"
-defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool false
+echo "System Preferences > Dock & Menu Bar > Show in menu bar - Bluetooth: Yes"
+defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool true
 
 echo "System Preferences > Dock & Menu Bar > Show in menu bar - AirDrop: No"
 defaults write com.apple.controlcenter "NSStatusItem Visible AirDrop" -bool false
@@ -309,6 +314,18 @@ defaults write com.apple.screencapture show-thumbnail -bool false
 echo "Apps > Screenshots > Disable shadow: Yes"
 defaults write com.apple.screencapture disable-shadow -bool true
 
+echo "Apps > ImageCapture > Disable auto-prompt to get pictures from device: Yes"
+defaults write com.apple.ImageCapture disableHotPlug -bool true
+
+echo "Apps > Amphetamine > Change to carafe appearance"
+defaults write com.if.Amphetamine "Icon Style" -int 4
+
+echo "Apps > Amphetamine > Low opacity when inactive"
+defaults write com.if.Amphetamine "Lower Icon Opacity" -int 1
+
+echo "Apps > Amphetamine > Left click to start session"
+defaults write com.if.Amphetamine "Status Item Click" -int 2
+
 echo "Apps > Bear > Theme: Dracula"
 defaults write net.shinyfrog.bear SFAppDarkThemeName -string Dracula
 
@@ -324,23 +341,18 @@ defaults write net.shinyfrog.bear SFNoteTextViewContinuousSpellCheckingEnabled -
 echo "Apps > Bear > Grammar check: No"
 defaults write net.shinyfrog.bear SFNoteTextViewGrammarCheckingEnabled -bool false
 
-echo "Apps > Amphetamine > Change to carafe appearance"
-defaults write com.if.Amphetamine "Icon Style" -int 4
-
-echo "Apps > Amphetamine > Low opacity when inactive"
-defaults write com.if.Amphetamine "Lower Icon Opacity" -int 1
-
-echo "Apps > Amphetamine > Left click to start session"
-defaults write com.if.Amphetamine "Status Item Click" -int 2
-
 echo "Apps > iTerm2 > Set settings sync folder"
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "${HOME}/Dropbox/Sync/Apps/iTerm2/Settings"
 
 echo "Apps > iTerm2 > Load prefs from custom folder: Yes"
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 
-echo "Apps > ImageCapture > Disable auto-prompt to get pictures from device: Yes"
-defaults write com.apple.ImageCapture disableHotPlug -bool true
+echo "System Preferences > Trackpad > One tap to click: Yes"
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+
+echo "System Preferences > Trackpad > One tap to click: Yes"
+defaults write -globalDomain com.apple.mouse.tapBehavior -int 1
+
 
 
 echo "Killing all affected applications..."

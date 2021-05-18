@@ -2,19 +2,12 @@
 
 echo "Executing some additional steps..."
 
-# Set up Xcode CLT
-echo "Checking if Xcode Command Line Tools need installation..."
-if [ -d $(xcode-select -p) ]
-then
-	echo "${GREEN}Xcode Command Line Tools directory detected. Skipping install.${RESET}"
-else
-	echo "${YELLOW}No Xcode Command Line Tools directory detected. Installing...${RESET}"
-	xcode-select --install
-fi
-
 # Accept Xcode license
-echo "${CYAN}Please accept Xcode license...${RESET}"
-sudo xcodebuild -license accept
+if [ -d "/Applications/Xcode.app" ]
+then 
+	echo "${CYAN}Please accept Xcode license...${RESET}"
+	sudo xcodebuild -license accept
+fi
 
 echo "Revealing user Library folder..."
 chflags nohidden ~/Library

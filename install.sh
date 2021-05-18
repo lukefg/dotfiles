@@ -61,6 +61,16 @@ fi
 echo "Running Software Update..."
 softwareupdate --all --install
 
+# Get Xcode CLT - Homebrew will want them anyway
+echo "Checking if Xcode Command Line Tools need installation..."
+if [ -d $(xcode-select -p) ]
+then
+	echo "${GREEN}Xcode Command Line Tools detected. Skipping install.${RESET}"
+else
+	echo "${YELLOW}No Xcode Command Line Tools directory detected. Installing...${RESET}"
+	xcode-select --install
+fi
+
 # Set up Homebrew
 echo "Checking for Homebrew installation..."
 brew --version
@@ -135,6 +145,12 @@ then
 fi
 
 echo "All done! Some changes require restart/logout to take effect."
+
+read -p "${CYAN}Do you want to restart now? [yN] ${RESET}" RESPONSE
+case $RESPONSE in
+	[Yy]* ) sudo shutdown -r now;;
+	* ) ;;
+esac
 
 unset CLONE_DIR ARG SCRIPT
 unset INSTALL_GAMING INSTALL_MUSIC INSTALL_WORK INSTALL_CHOICES INSTALL_3D INSTALL_1001
