@@ -1,5 +1,3 @@
-brew "svn"
-
 cask "atom"
 cask "cornerstone"
 cask "imagealpha"

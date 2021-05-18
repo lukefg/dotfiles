@@ -59,6 +59,7 @@ brew "heroku/brew/heroku"
 brew "nmap"
 brew "node"
 brew "python"
+brew "svn"
 brew "wget"
 
 brew "pure" # zsh prompt
