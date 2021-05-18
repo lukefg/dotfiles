@@ -1,2 +1,4 @@
 alias domains="defaults domains | tr ',' '\n' | grep -i"
 alias brewdeps="brew leaves | xargs brew deps --include-build --tree"
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
