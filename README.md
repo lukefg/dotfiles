@@ -6,6 +6,7 @@ My personal machine setup
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/lukefg/dotfiles/main/install.sh)"
+# -c: read commands from string
 ```
 
 This action is idempotent.
