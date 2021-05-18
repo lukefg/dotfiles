@@ -110,7 +110,7 @@ echo "Changing working directory to ${CLONE_DIR}/dotfiles/..."
 cd dotfiles
 
 # Run shell scripts in scripts/ in a specific order
-for ARG in brew linker defaults more secrets work
+for ARG in brew linker defaults more secrets
 do
 	SCRIPT="scripts/${ARG}.sh"
 	if [ -f "${SCRIPT}" ]
@@ -121,6 +121,18 @@ do
 		echo "${RED}WARNING: Could not find ${SCRIPT}. Skipping. Try again later.${RESET}"
 	fi
 done
+
+WORK_SCRIPT="scripts/work.sh"
+if [ ${INSTALL_WORK} ]
+then
+	if [ -r "${WORK_SCRIPT}" ]
+	then
+		echo "${YELLOW}Executing ${WORK_SCRIPT}...${RESET}"
+		source "${WORK_SCRIPT}"
+	else
+		echo "${RED}ERROR: Could not find ${WORK_SCRIPT}. Skipping. Try again later.${RESET}"
+	fi
+fi
 
 echo "All done! Some changes require restart/logout to take effect."
 
