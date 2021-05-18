@@ -50,8 +50,8 @@ then
 	echo "${RED}Skipping. Try again later.${RESET}"
 else
 	echo "${YELLOW}Setting computer and host names to ${TRIMMED}...${RESET}"
-	scutil --set ComputerName "${TRIMMED}"
-	scutil --set LocalHostName "${TRIMMED}"
+	sudo scutil --set ComputerName "${TRIMMED}"
+	sudo scutil --set LocalHostName "${TRIMMED}"
 fi
 
 unset RESPONSE TRIMMED
