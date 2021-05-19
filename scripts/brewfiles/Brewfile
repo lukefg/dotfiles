@@ -38,14 +38,6 @@ mas "NordVPN IKE", id: 1116599239 # cask "nordvpn"
 mas "Trello", id: 1278508951
 mas "The Unarchiver", id: 425424353 # cask "the-unarchiver"
 
-# =============
-# === FONTS ===
-# =============
-
-cask "font-source-code-pro"
-cask "font-sf-pro"
-cask "font-new-york"
-
 # ===========
 # === DEV ===
 # ===========
@@ -71,3 +63,11 @@ cask "iterm2"
 cask "postman"
 cask "visual-studio-code"
 cask "visual-studio"
+
+# =============
+# === FONTS ===
+# =============
+
+cask "font-source-code-pro"
+cask "font-sf-pro"
+cask "font-new-york"
