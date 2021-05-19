@@ -8,7 +8,7 @@ osascript -e 'tell application "System Preferences" to quit'
 echo "Making sure that the affected applications have been opened at least once and their prefs exist..."
 open -a Amphetamine
 open -a Bear
-open -a iTerm2
+open -a iTerm
 
 echo "System Preferences > General > Appearance: Dark"
 defaults write -globalDomain AppleInterfaceStyle -string Dark
