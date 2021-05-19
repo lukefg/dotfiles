@@ -54,6 +54,14 @@ else
 	sudo scutil --set LocalHostName "${TRIMMED}"
 fi
 
-unset RESPONSE TRIMMED
+# Create screenshots directory
+SCREENSHOTS_DIR="${HOME}/Desktop/Screenshots"
+if [ ! -d "${SCREENSHOTS_DIR}" ]
+then
+	echo "Creating ${SCREENSHOTS_DIR} to hold screenshots..."
+	mkdir "${SCREENSHOTS_DIR}"
+fi
+
+unset RESPONSE TRIMMED SCREENSHOTS_DIR
 
 return 0
