@@ -63,7 +63,7 @@ echo "System Preferences > Dock & Menu Bar > Double-click action: Minimize"
 defaults write -globalDomain AppleActionOnDoubleClick -string Minimize
 
 echo "System Preferences > Dock & Menu Bar > Minimize windows into application icon: Yes"
-defaults write com.apple.dock minimize-to-application -bool false
+defaults write com.apple.dock minimize-to-application -bool true
 
 echo "System Preferences > Dock & Menu Bar > Animate opening applications: Yes"
 defaults write com.apple.dock launchanim -bool true
@@ -146,7 +146,6 @@ defaults write com.apple.speech.synthesis.general.prefs TimeAnnouncementPrefs.Ti
 
 echo "System Preferences > Dock & Menu Bar > Spotlight - Show in Menu Bar: No"
 defaults write com.apple.Spotlight "NSStatusItem Visible Item-0" -bool false
-
 
 echo "System Preferences > Dock & Menu Bar > Time Machine - Show in Menu Bar: No"
 defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.TimeMachine" -bool false
@@ -246,19 +245,19 @@ echo "System Preferences > Time Machine > Stop suggesting for new disks"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 echo "System Preferences > Users & Groups > Login Options: Set login window text"
-defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText -string "If found, please contact luke.georgette@gmail.com"
+sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText -string "If found, please contact luke.georgette@gmail.com"
 
 echo "System Preferences > Users & Groups > Login Options: Disable shut down button: No"
-defaults write /Library/Preferences/com.apple.loginwindow ShutDownDisabled -bool false
+sudo defaults write /Library/Preferences/com.apple.loginwindow ShutDownDisabled -bool false
 
 echo "System Preferences > Users & Groups > Login Options: Disable restart button: No"
-defaults write /Library/Preferences/com.apple.loginwindow RestartDisabled -bool false
+sudo defaults write /Library/Preferences/com.apple.loginwindow RestartDisabled -bool false
 
 echo "System Preferences > Users & Groups > Login Options: Disable sleep button: No"
-defaults write /Library/Preferences/com.apple.loginwindow SleepDisabled -bool false
+sudo defaults write /Library/Preferences/com.apple.loginwindow SleepDisabled -bool false
 
 echo "System Preferences > Users & Groups > Login Options: Show info in top-right: IP address"
-defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo -string IPAddress
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo -string IPAddress
 
 echo "Finder > General > Show on desktop - Hard disks: No"
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
@@ -377,6 +376,7 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string "${HOME}/Dropbox/
 
 echo "Apps > iTerm2 > Load prefs from custom folder: Yes"
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+
 
 
 
