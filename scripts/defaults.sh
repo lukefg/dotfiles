@@ -8,6 +8,7 @@ osascript -e 'tell application "System Preferences" to quit'
 echo "Making sure that the affected applications have been opened at least once and their prefs exist..."
 open -a Amphetamine
 open -a Bear
+open -a BetterTouchTool
 open -a iTerm
 
 echo "System Preferences > General > Appearance: Dark"
@@ -353,6 +354,9 @@ defaults write net.shinyfrog.bear SFNoteTextViewContinuousSpellCheckingEnabled -
 echo "Apps > Bear > Grammar check: No"
 defaults write net.shinyfrog.bear SFNoteTextViewGrammarCheckingEnabled -bool false
 
+echo "Apps > BetterTouchTool > Launch at startup: Yes"
+defaults write com.hegenberg.BetterTouchTool launchOnStartup -bool true
+
 echo "Apps > iTerm2 > Set settings sync folder"
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "${HOME}/Dropbox/Sync/Apps/iTerm2/Settings"
 
@@ -362,8 +366,9 @@ defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 
 
 
+
 echo "Killing all affected applications..."
-for APP in Dock Finder Bear Amphetamine iTerm2
+for APP in Dock Finder Amphetamine Bear BetterTouchTool iTerm2
 do
     echo "Killing ${APP}..."
     killall "${APP}"
