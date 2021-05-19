@@ -32,6 +32,10 @@ else
     done
 fi
 
+# ==============
+# === ALFRED ===
+# ==============
+
 echo "Setting up Alfred..."
 echo "Making sure Alfred has been opened at least once."
 open -a "Alfred 4"
@@ -49,9 +53,32 @@ else
     echo "${RED}Could not find Alfred preferences. Skipping...${RESET}"
 fi
 
+# =======================
+# === BETTERTOUCHTOOL ===
+# =======================
+
 echo "Setting up BetterTouchTool..."
-BTT_LICENSE_SOURCE="${DROPBOX_SYNC}/Apps/BetterTouchTool/license.bettertouchtool"
+BTT_LICENSE_SOURCE="${DROPBOX_SYNC}/Apps/BetterTouchTool/lfg-lifetime.bettertouchtool"
 BTT_LICENSE_TARGET="${HOME}/Library/Application Support/BetterTouchTool"
+
+# === Alternate method to Brewfile ===
+# My license only covers up to v3.4
+# I can either brew v3.5 and then downgrade, or download v3.4 directly.
+# However, the latter gives you a hard time about it not being supported anymore,
+# so it's gonna be a pain no matter what. Might as well have it under Brewfile control
+# and deal with the downgrade then.
+# echo "Checking for app..."
+# if [ -d "/Applications/BetterTouchTool.app" ]
+# then
+#     echo "${GREEN}Found.${RESET}"
+# else
+#     echo "${YELLOW}Not found. Downloading v3.402-1633 from web..."
+#     BTT_URL="https://folivora.ai/releases/btt3.402-1633.zip"
+#     BTT_ZIP="${HOME}/Downloads/btt3.402-1633.zip"
+#     curl "${BTT_URL}" --output "${BTT_ZIP}"
+#     test -f "${BTT_ZIP}" && unzip "${BTT_ZIP}" -d "/Applications"
+# fi
+
 echo "Checking for Application Support target folder..."
 if [ -d "${BTT_LICENSE_TARGET}" ]
 then
@@ -75,6 +102,10 @@ else
 fi
 echo "Relaunching BetterTouchTool..."
 open -a "BetterTouchTool"
+
+# ============
+# === MOOM ===
+# ============
 
 echo "Setting up Moom..."
 open -a Moom

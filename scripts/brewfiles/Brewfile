@@ -15,7 +15,7 @@ brew "mas"
 
 cask "alfred"
 cask "appcleaner"
-cask "bettertouchtool"
+cask "bettertouchtool" # Need downgraded version v3.4, see secrets.sh
 cask "disk-inventory-x"
 cask "dropbox"
 cask "firefox"

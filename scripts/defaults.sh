@@ -369,7 +369,7 @@ do
     killall "${APP}"
 done
 
-echo "Done. Note: Some changes require a logout/restart to take effect."
+echo "Done."
 
 unset APP APPS
 

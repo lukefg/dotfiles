@@ -119,8 +119,8 @@ fi
 echo "Changing working directory to ${CLONE_DIR}/dotfiles/..."
 cd dotfiles
 
-echo "Pulling latest..."
-git pull origin main
+echo "Fast-forwarding to latest..."
+git pull --ff-only origin main
 
 # Run shell scripts in scripts/ in a specific order
 for ARG in brew linker more secrets defaults
