@@ -123,7 +123,7 @@ echo "Pulling latest..."
 git pull origin main
 
 # Run shell scripts in scripts/ in a specific order
-for ARG in brew linker defaults more secrets
+for ARG in brew linker more secrets defaults
 do
 	SCRIPT="scripts/${ARG}.sh"
 	if [ -f "${SCRIPT}" ]

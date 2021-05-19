@@ -235,6 +235,12 @@ defaults write -globalDomain NSAutomaticDashSubstitutionEnabled -bool true
 echo "System Preferences > Keyboard > Show Input menu in menu bar"
 defaults write com.apple.TextInputMenu visible -bool true
 
+echo "System Preferences > Trackpad > One tap to click: Yes"
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+
+echo "System Preferences > Trackpad > One tap to click: Yes"
+defaults write -globalDomain com.apple.mouse.tapBehavior -int 1
+
 echo "System Preferences > Time Machine > Stop suggesting for new disks"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
@@ -293,6 +299,9 @@ defaults write com.apple.finder ShowRecentTags -bool false
 echo "Finder > View Options > Show folders on top: Yes"
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
+echo "Finder > View Options > Preferred view: Column"
+defaults write com.apple.finder FXPreferredViewStyle -string clmv
+
 echo "Finder > Other > Create Desktop: No"
 defaults write com.apple.finder CreateDesktop -bool false
 
@@ -316,6 +325,9 @@ defaults write com.apple.screencapture disable-shadow -bool true
 
 echo "Apps > ImageCapture > Disable auto-prompt to get pictures from device: Yes"
 defaults write com.apple.ImageCapture disableHotPlug -bool true
+
+echo "Apps > Alfred > Set sync folder"
+defaults write com.runningwithcrayons.Alfred-Preferences syncfolder -string "~/Dropbox/Sync/Apps/Alfred"
 
 echo "Apps > Amphetamine > Change to carafe appearance"
 defaults write com.if.Amphetamine "Icon Style" -int 4
@@ -347,11 +359,6 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string "${HOME}/Dropbox/
 echo "Apps > iTerm2 > Load prefs from custom folder: Yes"
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 
-echo "System Preferences > Trackpad > One tap to click: Yes"
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-
-echo "System Preferences > Trackpad > One tap to click: Yes"
-defaults write -globalDomain com.apple.mouse.tapBehavior -int 1
 
 
 
