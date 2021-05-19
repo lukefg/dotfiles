@@ -245,6 +245,21 @@ defaults write -globalDomain com.apple.mouse.tapBehavior -int 1
 echo "System Preferences > Time Machine > Stop suggesting for new disks"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
+echo "System Preferences > Users & Groups > Login Options: Set login window text"
+defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText -string "If found, please contact luke.georgette@gmail.com"
+
+echo "System Preferences > Users & Groups > Login Options: Disable shut down button: No"
+defaults write /Library/Preferences/com.apple.loginwindow ShutDownDisabled -bool false
+
+echo "System Preferences > Users & Groups > Login Options: Disable restart button: No"
+defaults write /Library/Preferences/com.apple.loginwindow RestartDisabled -bool false
+
+echo "System Preferences > Users & Groups > Login Options: Disable sleep button: No"
+defaults write /Library/Preferences/com.apple.loginwindow SleepDisabled -bool false
+
+echo "System Preferences > Users & Groups > Login Options: Show info in top-right: IP address"
+defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo -string IPAddress
+
 echo "Finder > General > Show on desktop - Hard disks: No"
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 
