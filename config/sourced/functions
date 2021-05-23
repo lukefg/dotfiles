@@ -1,3 +1,8 @@
-function foo() {
-	echo "hello world"
+function get_passphrase() {
+	echo "Generating four-word passphrase from English dictionary, no whitespace, proper nouns will be capitalized..."
+	RESULT=$(shuf -n4 $DICTIONARY | tr -d '\n')
+	echo $RESULT
+	echo $RESULT | pbcopy
+	echo "Copied to pasteboard."
+	unset RESULT
 }
