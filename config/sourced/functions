@@ -6,3 +6,15 @@ function get_passphrase() {
 	echo "Copied to pasteboard."
 	unset RESULT
 }
+
+function ansi() {
+	for COLOR in $(seq 7)
+	do
+		for TYPE in 3 4 9 10
+		do
+			printf "\e[${TYPE}${COLOR}m ${TYPE}${COLOR} \e[0m\c"
+			echo
+		done
+	done
+	unset COLOR TYPE
+}
