@@ -43,8 +43,7 @@ mas "The Unarchiver", id: 425424353 # cask "the-unarchiver"
 # ===========
 
 brew "awscli"
-brew "coreutils"
-brew "git" # should already be installed
+brew "git" # should already be installed by this point
 brew "git-lfs"
 brew "gradle"
 brew "heroku/brew/heroku"
