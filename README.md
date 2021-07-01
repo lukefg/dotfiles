@@ -10,10 +10,10 @@ My personal machine setup
 # bash:
 # -c	read commands from string
 # curl:
-# -f	fail silently on HTTP errors
-# -s	silent mode
-# -S	show errors even on silent
-# -L	follow redirects
+# -f, --fail    	fail silently on server errors
+# -s, --silent  	silent mode
+# -S, --show-error	show errors even on silent
+# -L, --location	follow redirects
 ```
 
 This action is idempotent.
