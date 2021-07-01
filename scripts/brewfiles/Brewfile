@@ -18,6 +18,7 @@ cask "bettertouchtool" # Need downgraded version v3.4, see secrets.sh
 cask "disk-inventory-x"
 cask "dropbox"
 cask "firefox"
+cask "flux"
 cask "focusrite-control"
 cask "handbrake"
 cask "idrive"
@@ -47,11 +48,12 @@ brew "git" # should already be installed
 brew "git-lfs"
 brew "gradle"
 brew "heroku/brew/heroku"
-brew "inetutils"
+brew "inetutils" # ftp
 brew "nmap"
 brew "node"
 brew "python"
 brew "svn"
+brew "webp"
 brew "wget"
 
 brew "pure" # zsh prompt
@@ -61,6 +63,7 @@ cask "docker"
 cask "github"
 cask "iterm2"
 cask "postman"
+cask "raspberry-pi-imager"
 cask "visual-studio-code"
 cask "visual-studio"
 
@@ -71,5 +74,7 @@ cask "visual-studio"
 cask "font-anonymous-pro"
 cask "font-fira-code"
 cask "font-jetbrains-mono"
+cask "font-josefin-sans" # Vulcan wordmark
 cask "font-source-code-pro"
 cask "font-space-mono"
+cask "font-unica-one"
