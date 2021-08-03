@@ -14,7 +14,7 @@ brew "mas"
 
 cask "alfred"
 cask "appcleaner"
-cask "bettertouchtool" # Need downgraded version v3.4, see secrets.sh
+cask "bettertouchtool"
 cask "disk-inventory-x"
 cask "dropbox"
 cask "firefox"
@@ -51,6 +51,7 @@ brew "inetutils" # ftp
 brew "nmap"
 brew "node"
 brew "python"
+brew "ruby"
 brew "svn"
 brew "webp"
 brew "wget"
@@ -74,6 +75,7 @@ cask "font-anonymous-pro"
 cask "font-fira-code"
 cask "font-jetbrains-mono"
 cask "font-josefin-sans" # Vulcan wordmark
+cask "font-nixie-one" # Letterswipe tile text
 cask "font-source-code-pro"
 cask "font-space-mono"
 cask "font-unica-one"

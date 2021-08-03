@@ -5,3 +5,7 @@ export CLICOLOR=1 # same as ls -G
 # DISPLAY=
 export EDITOR=vim
 # PAGER=
+
+# ruby
+export LDFLAGS="-L/usr/local/opt/ruby/lib"
+export CPPFLAGS="-I/usr/local/opt/ruby/include"
