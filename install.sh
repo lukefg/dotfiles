@@ -123,7 +123,7 @@ echo "Fast-forwarding to latest..."
 git pull --ff-only origin main
 
 # Run shell scripts in scripts/ in a specific order
-for ARG in brew linker more secrets defaults
+for ARG in brew linker more secrets defaults server
 do
 	SCRIPT="scripts/${ARG}.sh"
 	if [ -f "${SCRIPT}" ]
