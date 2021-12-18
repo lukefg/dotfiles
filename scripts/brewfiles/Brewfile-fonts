@@ -1,0 +1,8 @@
+cask "font-anonymous-pro"
+cask "font-fira-code"
+cask "font-jetbrains-mono"
+cask "font-josefin-sans" # Vulcan wordmark
+cask "font-nixie-one" # Letterswipe tile text
+cask "font-source-code-pro"
+cask "font-space-mono"
+cask "font-unica-one"

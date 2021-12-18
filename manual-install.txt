@@ -1,0 +1,6 @@
+Akai Professional MPK Mini III Program Editor.app
+Final Draft 12.app
+GameMaker Studio 2.app
+MPK mini Software Manager.app
+Virtual Desktop Streamer.app
+Virtual Desktop Updater.app

@@ -1,6 +1,6 @@
 alias brewtree="brew leaves | xargs brew deps --tree --installed --include-optional --include-requirements --annotate"
 alias domains="defaults domains | tr ',' '\n' | grep -i"
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip="curl ifconfig.me"
 alias localip="ipconfig getifaddr en0"
 alias lsa="ls -aFhl"
 alias gittree="git log --all --graph --pretty=oneline --abbrev-commit"

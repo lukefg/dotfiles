@@ -1,6 +1,6 @@
 cask "8bitdo-ultimate-software"
-cask "epic-games"
-cask "steam"
 cask "battle-net"
+cask "epic-games"
 cask "openemu"
+cask "steam"
 cask "sony-ps4-remote-play"

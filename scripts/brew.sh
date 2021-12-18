@@ -38,12 +38,12 @@ cd ${BREWFILE_DIR}
 echo "Executing Brewfiles based on requirements..."
 
 check_brewfile Brewfile
+check_brewfile Brewfile-dev
+check_brewfile Brewfile-fonts
 test $INSTALL_GAMING && check_brewfile Brewfile-mine-gaming
 test $INSTALL_MUSIC && check_brewfile Brewfile-mine-music
 test $INSTALL_WORK && check_brewfile Brewfile-work
 test $INSTALL_CHOICES && check_brewfile Brewfile-work-choices
-test $INSTALL_3D && check_brewfile Brewfile-work-3d
-test $INSTALL_1001 && check_brewfile Brewfile-work-1001
 
 echo "Cleaning up..."
 brew cleanup

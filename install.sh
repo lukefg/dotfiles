@@ -29,28 +29,18 @@ done
 
 if [ ${INSTALL_WORK} ]
 then
-	read -p "${CYAN}Install Choices package? [yN] ${RESET}" RESPONSE
+	read -p "${CYAN}Install Choices bundle? [yN] ${RESET}" RESPONSE
 	case $RESPONSE in
 		[Yy]* ) echo "Will install Choices requirements."; INSTALL_CHOICES=0;;
 		* ) echo "Will not install Choices requirements.";
 	esac
-	read -p "${CYAN}Install 3D package? [yN] ${RESET}" RESPONSE
-	case $RESPONSE in
-		[Yy]* ) echo "Will install 3D requirements."; INSTALL_3D=0;;
-		* ) echo "Will not install 3D requirements.";
-	esac
-	read -p "${CYAN}Install 1001 package? [yN] ${RESET}" RESPONSE
-	case $RESPONSE in
-		[Yy]* ) echo "Will install 1001 requirements."; INSTALL_1001=0;;
-		* ) echo "Will not install 1001 requirements.";
-	esac
 else
-	read -p "${CYAN}Install gaming package? [yN] ${RESET}" RESPONSE
+	read -p "${CYAN}Install gaming bundle? [yN] ${RESET}" RESPONSE
 	case $RESPONSE in
 		[Yy]* ) echo "Will install gaming requirements."; INSTALL_GAMING=0;;
 		* ) echo "Will not install gaming requirements.";
 	esac
-	read -p "${CYAN}Install music production package? [yN] ${RESET}" RESPONSE
+	read -p "${CYAN}Install music production bundle? [yN] ${RESET}" RESPONSE
 	case $RESPONSE in
 		[Yy]* ) echo "Will install music production requirements."; INSTALL_MUSIC=0;;
 		* ) echo "Will not install music production requirements.";
@@ -147,9 +137,10 @@ then
 	fi
 fi
 
-echo "All done! Some changes require restart/logout to take effect."
+echo "All done!"
+echo "Some apps can't be installed programmatically. See manual-install.txt for the list."
 
-read -p "${CYAN}Do you want to restart now? [yN] ${RESET}" RESPONSE
+read -p "${CYAN}Some changes require restart/logout to take effect. Do you want to restart now? [yN] ${RESET}" RESPONSE
 case $RESPONSE in
 	[Yy]* ) sudo shutdown -r now;;
 	* ) ;;

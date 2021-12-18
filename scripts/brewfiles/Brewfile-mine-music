@@ -1,8 +1,12 @@
+# Music
 cask "ableton-live-standard"
 cask "ilok-license-manager"
+cask "midi-monitor"
 cask "native-access"
 cask "softube-central"
 cask "spitfire-audio"
+cask "tuxguitar"
 cask "waves-central"
 
 mas "GarageBand", id: 682658836
+mas "Tonebridge Guitar Effects", id: 1263858588

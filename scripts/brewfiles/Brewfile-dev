@@ -1,0 +1,25 @@
+brew "awscli"
+brew "git" # should already be installed by this point
+brew "git-lfs"
+brew "gradle"
+brew "heroku/brew/heroku"
+brew "inetutils" # ftp
+brew "nmap"
+brew "node"
+brew "pure" # zsh prompt
+brew "python"
+brew "ruby"
+brew "svn"
+brew "webp"
+brew "wget"
+
+cask "blender"
+cask "dotnet"
+cask "docker"
+cask "github"
+cask "iterm2"
+cask "postman"
+cask "raspberry-pi-imager"
+cask "unity-hub"
+cask "visual-studio-code"
+cask "visual-studio"
