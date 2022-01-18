@@ -22,6 +22,7 @@ cask "idrive"
 cask "logitech-g-hub"
 cask "logitech-options"
 cask "netspot"
+cask "notion"
 # cask "scroll-reverser" # replaced by a BTT setting
 cask "skyfonts"
 cask "spotify"
@@ -30,7 +31,7 @@ cask "vlc"
 cask "zoom"
 
 mas "Amphetamine", id: 937984704
-mas "Bear", id: 1091189122
+# mas "Bear", id: 1091189122
 mas "Color Blind Pal", id: 1023111433
 mas "GIPHY CAPTURE", id: 668208984
 mas "Moom", id: 419330170
