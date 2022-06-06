@@ -7,5 +7,6 @@ cask "spitfire-audio"
 cask "tuxguitar"
 cask "waves-central"
 
+mas "Capo", id: 696977615
 mas "GarageBand", id: 682658836
 mas "Tonebridge Guitar Effects", id: 1263858588

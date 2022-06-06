@@ -23,3 +23,5 @@ cask "raspberry-pi-imager"
 cask "unity-hub"
 cask "visual-studio"
 cask "visual-studio-code"
+
+mas "Xcode", id: 497799835

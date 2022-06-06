@@ -21,12 +21,14 @@ cask "handbrake"
 cask "idrive"
 cask "logitech-g-hub"
 cask "logitech-options"
-cask "netspot"
+cask "moom" # mas "Moom", id: 419330170
+cask "nordvpn" # mas "NordVPN: VPN Fast & Secure", id: 905953485
 cask "notion"
 # cask "scroll-reverser" # replaced by a BTT setting
 cask "skyfonts"
 cask "spotify"
 cask "steelseries-engine"
+cask "the-unarchiver" # mas "The Unarchiver", id: 425424353
 cask "vlc"
 cask "zoom"
 
@@ -34,8 +36,5 @@ mas "Amphetamine", id: 937984704
 # mas "Bear", id: 1091189122
 mas "Color Blind Pal", id: 1023111433
 mas "GIPHY CAPTURE", id: 668208984
-mas "Moom", id: 419330170
-mas "NordVPN: VPN Fast & Secure", id: 905953485 # cask "nordvpn"
 mas "Speedtest by Ookla", id: 1153157709
-mas "Trello", id: 1278508951
-mas "The Unarchiver", id: 425424353 # cask "the-unarchiver"
+# mas "Trello", id: 1278508951
