@@ -13,3 +13,5 @@ do
 	sudo echo "${TARGET_IP} ${line}" >> $HOSTS_FILE
 done < $INPUT_FILE
 sudo echo >> $HOSTS_FILE
+
+sudo dscacheutil -flushcache
