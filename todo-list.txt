@@ -1,0 +1,2 @@
+[] Turn off Trackpad > Point & Click > Force Click and haptic feedback
+[] Show hidden user Library in Finder

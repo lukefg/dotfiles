@@ -1,13 +1,9 @@
 brew "cocoapods"
 
 cask "adobe-creative-cloud"
-cask "android-studio"
 cask "dbvisualizer"
 cask "figma"
 cask "fork"
 cask "google-chrome"
 cask "microsoft-office"
 cask "slack" # mas "Slack", id: 803453959
-
-mas "Jira", id: 1475897096
-mas "Xcode", id: 497799835 # @TODO I need a specific version of Xcode

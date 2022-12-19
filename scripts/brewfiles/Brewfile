@@ -15,20 +15,18 @@ cask "bettertouchtool"
 cask "disk-inventory-x"
 cask "dropbox"
 cask "firefox"
-cask "flux"
 cask "focusrite-control"
 cask "handbrake"
 cask "idrive"
 cask "logitech-g-hub"
 cask "logitech-options"
-cask "moom" # mas "Moom", id: 419330170
-cask "nordvpn" # mas "NordVPN: VPN Fast & Secure", id: 905953485
+cask "nordvpn"
 cask "notion"
 # cask "scroll-reverser" # replaced by a BTT setting
 cask "skyfonts"
 cask "spotify"
-cask "steelseries-engine"
-cask "the-unarchiver" # mas "The Unarchiver", id: 425424353
+# cask "steelseries-engine"
+cask "the-unarchiver"
 cask "vlc"
 cask "zoom"
 

@@ -31,19 +31,19 @@ if [ ${INSTALL_WORK} ]
 then
 	read -p "${CYAN}Install Choices bundle? [yN] ${RESET}" RESPONSE
 	case $RESPONSE in
-		[Yy]* ) echo "Will install Choices requirements."; INSTALL_CHOICES=0;;
-		* ) echo "Will not install Choices requirements.";
+		[Yy]* ) echo "Will install Choices suite."; INSTALL_CHOICES=0;;
+		* ) echo "Will not install Choices suite.";
 	esac
 else
 	read -p "${CYAN}Install gaming bundle? [yN] ${RESET}" RESPONSE
 	case $RESPONSE in
-		[Yy]* ) echo "Will install gaming requirements."; INSTALL_GAMING=0;;
-		* ) echo "Will not install gaming requirements.";
+		[Yy]* ) echo "Will install gaming suite."; INSTALL_GAMING=0;;
+		* ) echo "Will not install gaming suite.";
 	esac
 	read -p "${CYAN}Install music production bundle? [yN] ${RESET}" RESPONSE
 	case $RESPONSE in
-		[Yy]* ) echo "Will install music production requirements."; INSTALL_MUSIC=0;;
-		* ) echo "Will not install music production requirements.";
+		[Yy]* ) echo "Will install music production suite."; INSTALL_MUSIC=0;;
+		* ) echo "Will not install music production suite.";
 	esac
 fi
 
@@ -113,7 +113,7 @@ echo "Fast-forwarding to latest..."
 git pull --ff-only origin main
 
 # Run shell scripts in scripts/ in a specific order
-for ARG in brew linker more secrets defaults server
+for ARG in brew linker more secrets defaults server block
 do
 	SCRIPT="scripts/${ARG}.sh"
 	if [ -f "${SCRIPT}" ]

@@ -28,10 +28,17 @@
 # Opened both Terminal and iTerm the next morning after a shut down and... both act the same now. -_-
 # I had tried a computer restart last night to no avail.
 
+# =====================
+# PATH PRECEDENCE ORDER
+# =====================
+# 1. This file
+# 2. ~/.zprofile
+# 3. /etc/paths
+# 4. /etc/paths.d/ alphabetically
+
 PATH="/usr/local/opt/ruby/bin:${PATH}" # Add ruby
 
-DOTFILES_BIN="${HOME}/Repos/git/dotfiles/bin"
-
+DOTFILES_BIN="${HOME}/Repos/git/dotfiles/bin" # Add dotfiles programs
 if [ -d ${DOTFILES_BIN} ]
 then
 	PATH="${DOTFILES_BIN}:${PATH}"
