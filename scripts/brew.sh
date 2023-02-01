@@ -26,7 +26,6 @@ function check_brewfile() {
 }
 
 BREWFILE_DIR="scripts/brewfiles"
-MY_BREWFILES="Brewfile Brewfile-mine-gaming Brewfile-mine-music Brewfile-work"
 
 echo "Updating Homebrew..."
 brew update
@@ -51,7 +50,6 @@ echo "Done"
 
 cd ../.. # To dotfiles root
 
-unset BREWFILE_DIR MY_BREWFILES FILE
+unset BREWFILE_DIR FILE
 
 return 0
-
