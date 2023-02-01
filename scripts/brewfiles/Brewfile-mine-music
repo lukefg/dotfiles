@@ -2,8 +2,8 @@
 cask "ableton-live-standard"
 cask "ilok-license-manager"
 cask "native-access"
-cask "softube-central"
-cask "spitfire-audio"
+# cask "softube-central"
+# cask "spitfire-audio"
 # cask "tuxguitar"
 cask "waves-central"
 

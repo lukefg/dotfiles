@@ -11,7 +11,7 @@ brew "mas" # mac app store
 cask "alfred"
 cask "android-file-transfer"
 cask "appcleaner"
-cask "bettertouchtool"
+# cask "bettertouchtool"
 cask "disk-inventory-x"
 cask "dropbox"
 cask "firefox"
@@ -34,5 +34,6 @@ mas "Amphetamine", id: 937984704
 # mas "Bear", id: 1091189122
 mas "Color Blind Pal", id: 1023111433
 mas "GIPHY CAPTURE", id: 668208984
+mas "Moom", id: 
 mas "Speedtest by Ookla", id: 1153157709
 # mas "Trello", id: 1278508951

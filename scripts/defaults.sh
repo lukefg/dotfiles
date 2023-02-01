@@ -7,7 +7,7 @@ osascript -e 'tell application "System Preferences" to quit'
 
 echo "Making sure that the affected applications have been opened at least once and their prefs exist..."
 open -a Amphetamine
-open -a Bear
+# open -a Bear
 open -a BetterTouchTool
 open -a iTerm
 
@@ -353,20 +353,20 @@ defaults write com.if.Amphetamine "Lower Icon Opacity" -int 1
 echo "Apps > Amphetamine > Left click to start session"
 defaults write com.if.Amphetamine "Status Item Click" -int 2
 
-echo "Apps > Bear > Theme: Dracula"
-defaults write net.shinyfrog.bear SFAppDarkThemeName -string Dracula
+# echo "Apps > Bear > Theme: Dracula"
+# defaults write net.shinyfrog.bear SFAppDarkThemeName -string Dracula
 
-echo "Apps > Bear > App icon matches theme: Yes"
-defaults write net.shinyfrog.bear SFAppIconMatchesTheme -bool true
+# echo "Apps > Bear > App icon matches theme: Yes"
+# defaults write net.shinyfrog.bear SFAppIconMatchesTheme -bool true
 
-echo "Apps > Bear > Auto spell correction: No"
-defaults write net.shinyfrog.bear SFNoteTextViewAutomaticSpellingCorrectionEnabled -bool false
+# echo "Apps > Bear > Auto spell correction: No"
+# defaults write net.shinyfrog.bear SFNoteTextViewAutomaticSpellingCorrectionEnabled -bool false
 
-echo "Apps > Bear > Spell check: No"
-defaults write net.shinyfrog.bear SFNoteTextViewContinuousSpellCheckingEnabled -bool false
+# echo "Apps > Bear > Spell check: No"
+# defaults write net.shinyfrog.bear SFNoteTextViewContinuousSpellCheckingEnabled -bool false
 
-echo "Apps > Bear > Grammar check: No"
-defaults write net.shinyfrog.bear SFNoteTextViewGrammarCheckingEnabled -bool false
+# echo "Apps > Bear > Grammar check: No"
+# defaults write net.shinyfrog.bear SFNoteTextViewGrammarCheckingEnabled -bool false
 
 echo "Apps > BetterTouchTool > Launch at startup: Yes"
 defaults write com.hegenberg.BetterTouchTool launchOnStartup -bool true

@@ -4,6 +4,7 @@ GameMaker Studio 2.app
 MPK mini Software Manager.app
 Virtual Desktop Streamer.app
 Virtual Desktop Updater.app
+Wacom Desktop Center
 
 # Console boot screensaver
 - Copy SaveHollywood.dmg from Dropbox
