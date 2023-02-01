@@ -9,8 +9,9 @@ then
 	sudo xcodebuild -license accept
 fi
 
-echo "Revealing user Library folder..."
-chflags nohidden ~/Library
+# This no longer works in Mojave and later.
+#echo "Revealing user Library folder..."
+#chflags nohidden ~/Library
 
 # PYTHON
 echo "Checking for pip installation..."
@@ -24,9 +25,8 @@ else
 	python3 get-pip.py
 	rm get-pip.py
 	python3 -m pip install --upgrade pip
-	python3 -mpip install requests
-	python3 -mpip install boto3
-
+	python3 -m pip install requests
+	python3 -m pip install boto3
 fi
 
 # =========================

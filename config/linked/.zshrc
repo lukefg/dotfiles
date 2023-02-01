@@ -12,3 +12,6 @@ done
 # Load pure prompt
 autoload -U promptinit; promptinit
 prompt pure
+
+# === ADDED AUTOMATICALLY ===
+

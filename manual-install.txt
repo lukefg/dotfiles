@@ -4,3 +4,10 @@ GameMaker Studio 2.app
 MPK mini Software Manager.app
 Virtual Desktop Streamer.app
 Virtual Desktop Updater.app
+
+# Console boot screensaver
+- Copy SaveHollywood.dmg from Dropbox
+- Install
+- Copy videos from Dropbox to HDD (saver can't read them from Dropbox anymore)
+- Add to saver queue
+- Options: random, fit, mute, main only
