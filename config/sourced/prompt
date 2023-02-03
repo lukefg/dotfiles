@@ -1,1 +1,1 @@
-export PROMPT="%n@%m %1~ (%?) " # Replaced by pure prompt
+# export PROMPT="%n@%m %1~ (%?) " # Replaced by pure prompt

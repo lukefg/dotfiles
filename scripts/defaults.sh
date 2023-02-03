@@ -245,7 +245,7 @@ echo "System Preferences > Time Machine > Stop suggesting for new disks"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 echo "System Preferences > Users & Groups > Login Options: Set login window text"
-sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText -string "If found, please contact luke.georgette@gmail.com"
+sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText -string "If found, please notify luke.georgette@gmail.com"
 
 echo "System Preferences > Users & Groups > Login Options: Disable shut down button: No"
 sudo defaults write /Library/Preferences/com.apple.loginwindow ShutDownDisabled -bool false
