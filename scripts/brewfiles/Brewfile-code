@@ -1,0 +1,32 @@
+# brew "awscli"
+brew "git" # should already be installed by this point
+brew "git-lfs"
+# brew "gradle"
+# brew "heroku/brew/heroku"
+# brew "inetutils" # ftp
+# brew "nmap"
+# brew "node"
+brew "pure" # zsh prompt
+# brew "python"
+# brew "ruby"
+# brew "svn"
+# brew "webp"
+# brew "wget"
+
+cask "android-studio"
+cask "arc"
+cask "dbvisualizer"
+# cask "docker"
+cask "dotnet"
+cask "github"
+cask "mono-mdk"
+cask "postbird"
+cask "postgres-unofficial"
+cask "postman"
+cask "pycharm-ce"
+cask "r"
+cask "raspberry-pi-imager"
+cask "rstudio"
+cask "visual-studio-code"
+
+mas "Xcode", id: 497799835

@@ -1,9 +1,0 @@
-brew "cocoapods"
-
-cask "adobe-creative-cloud"
-cask "dbvisualizer"
-cask "figma"
-cask "fork"
-cask "google-chrome"
-cask "microsoft-office"
-cask "slack" # mas "Slack", id: 803453959

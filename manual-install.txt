@@ -1,11 +1,4 @@
-Akai Professional MPK Mini III Program Editor.app
-Final Draft 12.app
-GameMaker Studio 2.app
-MPK mini Software Manager.app
-Spark Firmware Updater
-Virtual Desktop Streamer.app
-Virtual Desktop Updater.app
-XLN Online Installer (Addictive Drums)
+See Computer Apps Suite on Google Drive.
 
 # Console boot screensaver
 - Copy SaveHollywood.dmg from Dropbox

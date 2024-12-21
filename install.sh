@@ -29,11 +29,7 @@ done
 
 if [ ${INSTALL_WORK} ]
 then
-	read -p "${CYAN}Install Choices bundle? [yN] ${RESET}" RESPONSE
-	case $RESPONSE in
-		[Yy]* ) echo "Will install Choices suite."; INSTALL_CHOICES=0;;
-		* ) echo "Will not install Choices suite.";
-	esac
+	# deprecated
 else
 	read -p "${CYAN}Install gaming bundle? [yN] ${RESET}" RESPONSE
 	case $RESPONSE in

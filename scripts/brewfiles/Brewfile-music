@@ -1,6 +1,6 @@
-# Music
 cask "ableton-live-standard"
 cask "ilok-license-manager"
+cask "musescore"
 cask "native-access"
 # cask "softube-central"
 # cask "spitfire-audio"

@@ -2,6 +2,15 @@ alias brewtree="brew leaves | xargs brew deps --tree --installed --include-optio
 alias domains="defaults domains | tr ',' '\n' | grep -i"
 alias ip="curl ifconfig.me"
 alias localip="ipconfig getifaddr en0"
+
+# -a: show hidden
+# -F: append indicator (directory/, executable*, link@)
+# -h: human readable sizes
+# -l: long, show permissions, owner, group, size, mod time
+# -@: show extended attributes
 alias lsa="ls -aFhl@"
+
 alias gittree="git log --all --graph --pretty=oneline --abbrev-commit"
 alias path="echo $PATH | sed 's/:/\n/g'"
+
+alias conjugate="python3 ~/Projects/Code/Python/Conjugator/main.py"

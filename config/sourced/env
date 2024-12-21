@@ -1,5 +1,7 @@
 export DICTIONARY="/usr/share/dict/words"
 
+export TIDBYT="richly-staunch-hospitable-bird-c50"
+
 export CLICOLOR=1 # same as ls -G
 # export LSCOLORS=ExFxBxDxCxehedabagacad
 # DISPLAY=
