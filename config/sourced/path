@@ -38,7 +38,7 @@
 # 5. iTerm staples on its own utilities
 
 # PATH="/usr/local/opt/ruby/bin:${PATH}" # Add ruby
-PATH="/usr/local/texlive/2024/bin/universal-darwin:${PATH}"
+# PATH="/usr/local/texlive/2024/bin/universal-darwin:${PATH}"
 DOTFILES_BIN="${HOME}/Repos/git/dotfiles/bin" # Add dotfiles programs
 if [ -d ${DOTFILES_BIN} ]
 then

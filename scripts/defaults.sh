@@ -8,7 +8,7 @@ osascript -e 'tell application "System Preferences" to quit'
 echo "Making sure that the affected applications have been opened at least once and their prefs exist..."
 open -a Amphetamine
 # open -a Bear
-open -a BetterTouchTool
+# open -a BetterTouchTool
 open -a iTerm
 
 echo "System Preferences > General > Appearance: Dark"
@@ -32,7 +32,6 @@ defaults write -globalDomain AppleShowScrollBars -string WhenScrolling
 echo "System Preferences > General > Click in the scroll bar to: Jump to spot"
 defaults write -globalDomain AppleScrollerPagingBehavior -bool true
 
-
 echo "System Preferences > General > Prefer new document tabs: Always"
 defaults write -globalDomain AppleWindowTabbingMode -string always
 
@@ -41,8 +40,6 @@ defaults write -globalDomain NSCloseAlwaysConfirmsChanges -bool true
 
 echo "System Preferences > General > Close windows when quitting: Yes"
 defaults write -globalDomain NSQuitAlwaysKeepsWindows -bool false
-
-
 
 echo "System Preferences > Dock & Menu Bar > Tile size: ~55%"
 defaults write com.apple.dock tilesize -int 75
@@ -95,14 +92,11 @@ defaults write com.apple.controlcenter "NSStatusItem Visible DoNotDisturb" -bool
 echo "System Preferences > Dock & Menu Bar > Show in menu bar - Keyboard Brightness: No"
 defaults write com.apple.controlcenter "NSStatusItem Visible KeyboardBrightness" -bool false
 
-
-
 echo "System Preferences > Dock & Menu Bar > Show in menu bar - Sound: Yes, always"
 defaults write com.apple.controlcenter "NSStatusItem Visible Sound" -bool true
 
 echo "System Preferences > Dock & Menu Bar > Show in menu bar - Now Playing: Yes, when active"
 defaults write com.apple.controlcenter "NSStatusItem Visible NowPlaying" -bool false
-
 
 echo "System Preferences > Dock & Menu Bar > Accessibility Shortcuts - Show in Control Center: No"
 defaults write com.apple.controlcenter "NSStatusItem Visible AccessibilityShortcuts" -bool false
@@ -115,7 +109,6 @@ defaults write com.apple.controlcenter "NSStatusItem Visible Battery" -bool true
 
 echo "System Preferences > Dock & Menu Bar > Battery - Show Percentage: Yes"
 defaults write com.apple.menuextra.battery ShowPercent -string YES
-
 
 echo "System Preferences > Dock & Menu Bar > Fast User Switching - Show in Control Center: No"
 defaults write com.apple.controlcenter "NSStatusItem Visible UserSwitcher" -bool false
@@ -138,8 +131,8 @@ defaults write com.apple.menuextra.clock ShowAMPM -bool true
 echo "System Preferences > Dock & Menu Bar > Clock - Flash time separators: No"
 defaults write com.apple.menuextra.clock FlashDateSeparators -bool false
 
-echo "System Preferences > Dock & Menu Bar > Clock - Display the time with seconds: Yes"
-defaults write com.apple.menuextra.clock ShowSeconds -bool true
+echo "System Preferences > Dock & Menu Bar > Clock - Display the time with seconds: No"
+defaults write com.apple.menuextra.clock ShowSeconds -bool false
 
 echo "System Preferences > Dock & Menu Bar > Clock - Announce the time: No"
 defaults write com.apple.speech.synthesis.general.prefs TimeAnnouncementPrefs.TimeAnnouncementsEnabled -bool false
@@ -162,10 +155,8 @@ defaults write com.apple.dock static-only -bool true
 echo "System Preferences > Mission Control > Automatically rearrange Spaces based on most recent use: No"
 defaults write com.apple.dock mru-spaces -bool false
 
-
 echo "System Preferences > Mission Control > Group windows by application: Yes"
 defaults write com.apple.dock expose-group-by-app -bool true
-
 
 echo "System Preferences > Hot Corners > Top-left: none"
 defaults write com.apple.dock wvous-tl-corner -int 0
@@ -212,7 +203,6 @@ defaults write -globalDomain AppleICUForce24HourTime -bool false
 echo "System Preferences > Language & Region > Temperature: Fahrenheit"
 defaults write -globalDomain AppleTemperatureUnit -string Fahrenheit
 
-
 echo "System Preferences > Sound > Play feedback when volume is changed: No"
 defaults write -globalDomain com.apple.sound.beep.feedback -int 0
 
@@ -224,7 +214,6 @@ defaults write -globalDomain NSAutomaticCapitalizationEnabled -bool false
 
 echo "System Preferences > Keyboard > Add period with double-space: No"
 defaults write -globalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
-
 
 echo "System Preferences > Keyboard > Use smart quotes: Yes"
 defaults write -globalDomain NSAutomaticQuoteSubstitutionEnabled -bool true
@@ -277,7 +266,6 @@ defaults write com.apple.finder NewWindowTarget -string PfHm
 echo "Finder > General > Open folders in tabs instead of windows: No"
 defaults write com.apple.finder FinderSpawnTab -bool false
 
-
 echo "Finder > Advanced > Show extensions: Yes"
 defaults write -globalDomain AppleShowAllExtensions -bool true
 
@@ -292,9 +280,6 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool true
 
 echo "Finder > Advanced > When searching: Current folder"
 defaults write com.apple.finder FXDefaultSearchScope -string SCcf
-
-
-
 
 echo "Finder > View Options > Show path bar: Yes"
 defaults write com.apple.finder ShowPathbar -bool true
@@ -341,8 +326,8 @@ defaults write com.apple.screencapture disable-shadow -bool true
 echo "Apps > ImageCapture > Disable auto-prompt to get pictures from device: Yes"
 defaults write com.apple.ImageCapture disableHotPlug -bool true
 
-echo "Apps > Alfred > Set sync folder"
-defaults write com.runningwithcrayons.Alfred-Preferences syncfolder -string "~/Dropbox/Sync/Apps/Alfred"
+# echo "Apps > Alfred > Set sync folder"
+# defaults write com.runningwithcrayons.Alfred-Preferences syncfolder -string "~/Dropbox/Sync/Apps/Alfred"
 
 echo "Apps > Amphetamine > Change to carafe appearance"
 defaults write com.if.Amphetamine "Icon Style" -int 4
@@ -368,8 +353,8 @@ defaults write com.if.Amphetamine "Status Item Click" -int 2
 # echo "Apps > Bear > Grammar check: No"
 # defaults write net.shinyfrog.bear SFNoteTextViewGrammarCheckingEnabled -bool false
 
-echo "Apps > BetterTouchTool > Launch at startup: Yes"
-defaults write com.hegenberg.BetterTouchTool launchOnStartup -bool true
+# echo "Apps > BetterTouchTool > Launch at startup: Yes"
+# defaults write com.hegenberg.BetterTouchTool launchOnStartup -bool true
 
 echo "Apps > iTerm2 > Set settings sync folder"
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "${HOME}/Dropbox/Sync/Apps/iTerm2/Settings"
@@ -383,7 +368,7 @@ defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 
 
 echo "Killing all affected applications..."
-for APP in Dock Finder Amphetamine Bear BetterTouchTool iTerm2
+for APP in Dock Finder Amphetamine iTerm2
 do
     echo "Killing ${APP}..."
     killall "${APP}"

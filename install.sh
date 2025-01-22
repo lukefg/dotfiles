@@ -17,31 +17,31 @@ fi
 
 echo "Bootstrapping new machine..."
 
-while true
-do
-	read -p "${CYAN}Is this a [p]ersonal or [w]ork machine? ${RESET}" RESPONSE
-	case $RESPONSE in
-		[Pp]* ) echo "This is a personal machine."; break;;
-		[Ww]* ) echo "This is a work machine."; INSTALL_WORK=0; break;;
-		* ) echo "${RED}Need a response starting with P or W. Try again.${RESET}";;
-	esac
-done
-
-if [ ${INSTALL_WORK} ]
-then
-	# deprecated
-else
-	read -p "${CYAN}Install gaming bundle? [yN] ${RESET}" RESPONSE
-	case $RESPONSE in
-		[Yy]* ) echo "Will install gaming suite."; INSTALL_GAMING=0;;
-		* ) echo "Will not install gaming suite.";
-	esac
-	read -p "${CYAN}Install music production bundle? [yN] ${RESET}" RESPONSE
-	case $RESPONSE in
-		[Yy]* ) echo "Will install music production suite."; INSTALL_MUSIC=0;;
-		* ) echo "Will not install music production suite.";
-	esac
-fi
+read -p "${CYAN}Install work bundle? [yN] ${RESET}" RESPONSE
+case $RESPONSE in
+	[Yy]* ) echo "No work bundle exists."; INSTALL_WORK=0;;
+	* ) echo "Will not install work suite.";
+esac
+read -p "${CYAN}Install coding bundle? [yN] ${RESET}" RESPONSE
+case $RESPONSE in
+	[Yy]* ) echo "Will install coding suite."; INSTALL_CODING=0;;
+	* ) echo "Will not install coding suite.";
+esac
+read -p "${CYAN}Install gaming bundle? [yN] ${RESET}" RESPONSE
+case $RESPONSE in
+	[Yy]* ) echo "Will install gaming suite."; INSTALL_GAMING=0;;
+	* ) echo "Will not install gaming suite.";
+esac
+read -p "${CYAN}Install music production bundle? [yN] ${RESET}" RESPONSE
+case $RESPONSE in
+	[Yy]* ) echo "Will install music production suite."; INSTALL_MUSIC=0;;
+	* ) echo "Will not install music production suite.";
+esac
+read -p "${CYAN}Install game development bundle? [yN] ${RESET}" RESPONSE
+case $RESPONSE in
+	[Yy]* ) echo "Will install game development suite."; INSTALL_GAMEDEV=0;;
+	* ) echo "Will not install game development suite.";
+esac
 
 # First, check Software Update
 echo "Running Software Update..."
@@ -66,6 +66,7 @@ then
 else
 	echo "${YELLOW}Homebrew installation not detected. Installing...${RESET}"
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	source "scripts/linker.sh"
 fi
 
 # Set up git
@@ -109,7 +110,7 @@ echo "Fast-forwarding to latest..."
 git pull --ff-only origin main
 
 # Run shell scripts in scripts/ in a specific order
-for ARG in brew linker more secrets defaults server block
+for ARG in brew more defaults server block # dock secrets, moved linker earlier
 do
 	SCRIPT="scripts/${ARG}.sh"
 	if [ -f "${SCRIPT}" ]
@@ -121,17 +122,17 @@ do
 	fi
 done
 
-WORK_SCRIPT="scripts/work.sh"
-if [ ${INSTALL_WORK} ]
-then
-	if [ -r "${WORK_SCRIPT}" ]
-	then
-		echo "${YELLOW}Executing ${WORK_SCRIPT}...${RESET}"
-		source "${WORK_SCRIPT}"
-	else
-		echo "${RED}ERROR: Could not find ${WORK_SCRIPT}. Skipping. Try again later.${RESET}"
-	fi
-fi
+# WORK_SCRIPT="scripts/work.sh"
+# if [ ${INSTALL_WORK} ]
+# then
+# 	if [ -r "${WORK_SCRIPT}" ]
+# 	then
+# 		echo "${YELLOW}Executing ${WORK_SCRIPT}...${RESET}"
+# 		source "${WORK_SCRIPT}"
+# 	else
+# 		echo "${RED}ERROR: Could not find ${WORK_SCRIPT}. Skipping. Try again later.${RESET}"
+# 	fi
+# fi
 
 echo "All done!"
 echo "Some apps can't be installed programmatically. See manual-install.txt for the list."
@@ -143,7 +144,7 @@ case $RESPONSE in
 esac
 
 unset CLONE_DIR ARG SCRIPT
-unset INSTALL_GAMING INSTALL_MUSIC INSTALL_WORK INSTALL_CHOICES INSTALL_3D INSTALL_1001
+unset INSTALL_GAMING INSTALL_MUSIC INSTALL_WORK
 unset RESET RED GREEN YELLOW CYAN
 
 exit 0

@@ -36,12 +36,12 @@ echo "Changing working directory to ${BREWFILE_DIR}..."
 cd ${BREWFILE_DIR}
 echo "Executing Brewfiles based on requirements..."
 
-check_brewfile Brewfile-code
+check_brewfile Brewfile-utilities
 check_brewfile Brewfile-fonts
-check_brewfile Brewfile-gamedev
+test $INSTALL_CODING && check_brewfile Brewfile-code
+test $INSTALL_GAMEDEV && check_brewfile Brewfile-gamedev
 test $INSTALL_GAMING && check_brewfile Brewfile-gaming
 test $INSTALL_MUSIC && check_brewfile Brewfile-music
-check_brewfile Brewfile-utilities
 
 echo "Cleaning up..."
 brew cleanup

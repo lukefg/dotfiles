@@ -1,2 +1,2 @@
 imgur.com www.imgur.com
-twitter.com www.twitter.com api.twitter.com abs.twimg.com
+twitter.com www.twitter.com api.twitter.com abs.twimg.com x.com
