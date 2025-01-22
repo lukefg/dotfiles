@@ -67,6 +67,7 @@ else
 	echo "${YELLOW}Homebrew installation not detected. Installing...${RESET}"
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	source "scripts/linker.sh"
+	source "${HOME}/.zprofile"
 fi
 
 # Set up git
