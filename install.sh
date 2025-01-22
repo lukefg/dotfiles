@@ -68,6 +68,7 @@ else
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	source "scripts/linker.sh"
 	source "${HOME}/.zprofile"
+	eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # Set up git
