@@ -74,8 +74,8 @@ defaults write com.apple.dock show-process-indicators -bool true
 echo "System Preferences > Dock & Menu Bar > Show recent apps in Dock: No"
 defaults write com.apple.dock show-recents -bool false
 
-echo "System Preferences > Dock & Menu Bar > Auto hide menu bar: Yes"
-defaults write -globalDomain _HIHideMenuBar -bool true
+echo "System Preferences > Dock & Menu Bar > Auto hide menu bar: No"
+defaults write -globalDomain _HIHideMenuBar -bool false
 
 echo "System Preferences > Dock & Menu Bar > Show in menu bar - Wi-Fi: Yes"
 defaults write com.apple.controlcenter "NSStatusItem Visible WiFi" -bool true
@@ -357,7 +357,7 @@ defaults write com.if.Amphetamine "Status Item Click" -int 2
 # defaults write com.hegenberg.BetterTouchTool launchOnStartup -bool true
 
 echo "Apps > iTerm2 > Set settings sync folder"
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "${HOME}/Dropbox/Sync/Apps/iTerm2/Settings"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "${HOME}/Dropbox/Sync/iTerm2"
 
 echo "Apps > iTerm2 > Load prefs from custom folder: Yes"
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true

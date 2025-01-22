@@ -7,4 +7,4 @@ cask "imageoptim"
 cask "pngyu"
 cask "unity-hub"
 
-mas "Color Blind Pal", id: 1023111433
+# mas "Color Blind Pal", id: 1023111433

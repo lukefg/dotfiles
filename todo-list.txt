@@ -1,2 +1,21 @@
 [] Turn off Trackpad > Point & Click > Force Click and haptic feedback
 [] Show hidden user Library in Finder
+[] set up raycast with backups?
+[] iterm settings sync not working
+[] reopen windows after shutdown- no
+[] keep menu bar visiible- hide in full screenonly
+[] hide spotlight in menu bar
+[] display - more space
+[] need natural scrolling for trackpad but not mouse wheel
+[] blocklist doesnt work - permission denied and the blocklist txt not found
+
+[] Finder
+	⁃	Group by: Kind, Sort by: Name
+	⁃	Prefs > General > Show these: All, Open folders in tabs: check
+	⁃	Prefs > Sidebar > turn off Recents, turn on home, host
+	⁃	Rearrange sidebar: Locations at the top. Faves: luke, Applications, Desktop, Docs, Downs, Dropbox, Airdrop
+[] Settings
+	⁃	Desktop background
+[] Firefox
+	⁃	Sign into Firefox Sync
+    -   Set up Bitwarden
