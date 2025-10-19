@@ -19,6 +19,7 @@ cask "google-chrome"
 cask "handbrake"
 # cask "idrive"
 cask "iterm2"
+# cask "libreoffice"
 cask "logi-options-plus"
 # cask "nordvpn"
 cask "notion"
@@ -33,6 +34,7 @@ cask "the-unarchiver"
 cask "vlc"
 cask "wacom-tablet"
 cask "zoom"
+cask "zotero"
 
 mas "Amphetamine", id: 937984704
 # mas "Bear", id: 1091189122
