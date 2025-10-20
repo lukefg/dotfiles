@@ -6,7 +6,7 @@ brew "git-lfs"
 # brew "inetutils" # ftp
 # brew "nmap"
 # brew "node"
-brew "octave"
+# brew "octave"
 brew "pure" # zsh prompt
 # brew "python"
 # brew "ruby"
