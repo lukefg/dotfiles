@@ -1,5 +1,5 @@
 cask "blender"
-cask "figma"
+# cask "figma"
 cask "gamemaker"
 cask "gb-studio"
 cask "gimp"

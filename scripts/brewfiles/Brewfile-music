@@ -1,4 +1,4 @@
-cask "ableton-live-standard"
+cask "ableton-live-standard@11"
 cask "ilok-license-manager"
 cask "musescore"
 cask "native-access"

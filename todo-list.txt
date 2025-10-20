@@ -14,8 +14,9 @@
 	⁃	Prefs > General > Show these: All, Open folders in tabs: check
 	⁃	Prefs > Sidebar > turn off Recents, turn on home, host
 	⁃	Rearrange sidebar: Locations at the top. Faves: luke, Applications, Desktop, Docs, Downs, Dropbox, Airdrop
+	-	Create symbolic link for Dropbox in ~
 [] Settings
 	⁃	Desktop background
 [] Firefox
 	⁃	Sign into Firefox Sync
-    -   Set up Bitwarden
+    	-   	Set up Bitwarden

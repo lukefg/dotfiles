@@ -3,30 +3,26 @@
 tap "homebrew/bundle"
 # tap "heroku/brew"
 
+brew "exiftool"
 brew "mas" # mac app store
 
-# cask "alfred"
-# cask "android-file-transfer"
 cask "anki"
-# cask "anytype"
+cask "anytype"
 cask "appcleaner"
-# cask "bettertouchtool"
+cask "brave-browser"
 # cask "disk-inventory-x"
 cask "dropbox"
 cask "firefox"
 cask "focusrite-control"
-cask "google-chrome"
 cask "handbrake"
-# cask "idrive"
 cask "iterm2"
 # cask "libreoffice"
 cask "logi-options-plus"
-# cask "nordvpn"
 cask "notion"
 cask "notion-calendar"
 cask "openmtp"
+cask "protonvpn"
 cask "raycast"
-# cask "scroll-reverser" # replaced by a BTT setting
 # cask "skyfonts"
 cask "spotify"
 # cask "steelseries-engine"
@@ -37,8 +33,4 @@ cask "zoom"
 cask "zotero"
 
 mas "Amphetamine", id: 937984704
-# mas "Bear", id: 1091189122
 mas "GIPHY CAPTURE", id: 668208984
-# mas "Moom", id: 419330170
-# mas "Speedtest by Ookla", id: 1153157709
-# mas "Trello", id: 1278508951

@@ -15,7 +15,7 @@ brew "pure" # zsh prompt
 # brew "wget"
 
 # cask "android-studio"
-# cask "arc"
+cask "arduino-ide"
 cask "dbvisualizer"
 # cask "docker"
 cask "dotnet"
