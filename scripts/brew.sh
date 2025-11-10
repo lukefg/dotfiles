@@ -38,6 +38,7 @@ echo "Executing Brewfiles based on requirements..."
 
 check_brewfile Brewfile-utilities
 check_brewfile Brewfile-fonts
+check_brewfile Brewfile-engineering
 test $INSTALL_CODING && check_brewfile Brewfile-code
 test $INSTALL_GAMEDEV && check_brewfile Brewfile-gamedev
 test $INSTALL_GAMING && check_brewfile Brewfile-gaming
