@@ -1,10 +1,11 @@
+cask "adobe-creative-cloud"
 cask "blender"
 # cask "figma"
 cask "gamemaker"
 cask "gb-studio"
-cask "gimp"
+# cask "gimp"
 cask "imageoptim"
-cask "pngyu"
+# cask "pngyu"
 cask "unity-hub"
 
 # mas "Color Blind Pal", id: 1023111433

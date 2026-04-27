@@ -7,7 +7,7 @@ brew "exiftool"
 brew "mas" # mac app store
 
 cask "anki"
-cask "anytype"
+# cask "anytype"
 cask "appcleaner"
 cask "brave-browser"
 # cask "disk-inventory-x"
