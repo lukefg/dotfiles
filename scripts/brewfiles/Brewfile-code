@@ -6,7 +6,7 @@ brew "git-lfs"
 # brew "inetutils" # ftp
 # brew "nmap"
 # brew "node"
-# brew "octave"
+# brew "octave" # open source matlab
 brew "pure" # zsh prompt
 # brew "python"
 # brew "ruby"
@@ -15,7 +15,6 @@ brew "pure" # zsh prompt
 # brew "wget"
 
 # cask "android-studio"
-cask "arduino-ide"
 cask "dbvisualizer"
 # cask "docker"
 cask "dotnet"

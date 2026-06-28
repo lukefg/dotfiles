@@ -1,4 +1,5 @@
 brew "jupyterlab"
 brew "texlive"
 
+cask "arduino-ide"
 cask "qgis@ltr"
